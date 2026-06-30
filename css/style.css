@@ -1,0 +1,13 @@
+#mainNav {
+  background-color: #0a1f44; /* deep navy */
+}
+
+#mainNav .navbar-brand,
+#mainNav .nav-link {
+  color: #ffffff;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+  color: #ffc107; /* matches btn-warning for consistency */
+}
