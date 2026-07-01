@@ -11,3 +11,74 @@
 #mainNav .nav-link.active {
   color: #ffc107; /* matches btn-warning for consistency */
 }
+/* ─── Hero Section ─────────────────────────── */
+#hero {
+  background: linear-gradient(135deg, #0a1f44 0%, #1a4a6b 60%, #0d3060 100%);
+  min-height: 90vh;
+}
+
+.hero-overlay {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+/* Hero text styling */
+#hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  /* clamp() makes font size fluid:
+     minimum 2rem on tiny screens,
+     grows with viewport width (5vw),
+     maximum 3.5rem on large screens */
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 600px;
+  opacity: 0.92;
+  line-height: 1.7;
+}
+
+/* Button hover effects */
+#hero .btn-warning {
+  background-color: #ffc107;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#hero .btn-warning:hover {
+  transform: translateY(-2px);        /* lifts button slightly on hover */
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.45);
+}
+
+#hero .btn-outline-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #hero {
+    background-attachment: scroll; /* fixed attachment causes blur on mobile */
+  }
+
+  #hero h1 {
+    text-align: center;
+  }
+
+  .hero-tagline {
+    text-align: center;
+  }
+
+  #hero .d-flex {
+    justify-content: center; /* centers buttons on mobile */
+  }
+
+  #hero .badge {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
