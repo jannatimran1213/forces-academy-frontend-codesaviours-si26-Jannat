@@ -12,12 +12,19 @@
   color: #ffc107; /* matches btn-warning for consistency */
 }
 /* ─── Hero Section ─────────────────────────── */
+/* ─── Hero Section ─────────────────────────── */
 #hero {
-  background: linear-gradient(135deg, #0a1f44 0%, #1a4a6b 60%, #0d3060 100%);
-  min-height: 90vh;
+  background-image: url('../images/hero-bg.png');
+  background-size: cover;       /* fills the whole section, no gaps */
+  background-position: center;  /* keeps the focal point centered */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* parallax scroll effect — optional but looks great */
+  min-height: 90vh;             /* 90% of viewport height */
 }
 
+/* Dark overlay so white text is readable over any image */
 .hero-overlay {
+  background: rgba(0, 20, 60, 0.70); /* navy tint at 70% opacity */
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -81,4 +88,40 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* ─── Footer ────────────────────────────────── */
+#mainFooter {
+  background-color: #060f2a;   /* slightly darker than navbar */
+  padding: 60px 0 30px;
+  margin-top: auto;
+}
+
+.footer-text {
+  color: #a0aec0;              /* muted grey — readable but not blinding white */
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffc107;              /* gold on hover — matches your brand accent */
+}
+
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: #718096;
+  font-size: 0.85rem;
 }
