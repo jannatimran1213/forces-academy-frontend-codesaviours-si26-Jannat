@@ -1,127 +1,257 @@
-#mainNav {
-  background-color: #0a1f44; /* deep navy */
+/* ===============================
+   Google Font
+=================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   Global Styles
+=================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-#mainNav .navbar-brand,
-#mainNav .nav-link {
-  color: #ffffff;
+html{
+    scroll-behavior:smooth;
 }
 
-#mainNav .nav-link:hover,
-#mainNav .nav-link.active {
-  color: #ffc107; /* matches btn-warning for consistency */
-}
-/* ─── Hero Section ─────────────────────────── */
-/* ─── Hero Section ─────────────────────────── */
-#hero {
-  background-image: url('../images/hero-bg.png');
-  background-size: cover;       /* fills the whole section, no gaps */
-  background-position: center;  /* keeps the focal point centered */
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* parallax scroll effect — optional but looks great */
-  min-height: 90vh;             /* 90% of viewport height */
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#212529;
 }
 
-/* Dark overlay so white text is readable over any image */
-.hero-overlay {
-  background: rgba(0, 20, 60, 0.70); /* navy tint at 70% opacity */
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-}
-/* Hero text styling */
-#hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem); 
-  /* clamp() makes font size fluid:
-     minimum 2rem on tiny screens,
-     grows with viewport width (5vw),
-     maximum 3.5rem on large screens */
-  line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+/* ===============================
+   Navbar
+=================================*/
+
+#navbar{
+    background:#0d2b52;
+    padding:14px 0;
+    transition:.3s;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-.hero-tagline {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  max-width: 600px;
-  opacity: 0.92;
-  line-height: 1.7;
+.navbar-brand{
+    color:#fff;
+    font-weight:700;
+    text-decoration:none;
 }
 
-/* Button hover effects */
-#hero .btn-warning {
-  background-color: #ffc107;
-  border: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.navbar-brand h5{
+    margin:0;
+    font-size:1.15rem;
 }
 
-#hero .btn-warning:hover {
-  transform: translateY(-2px);        /* lifts button slightly on hover */
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.45);
+.navbar-brand small{
+    color:#d4d4d4;
 }
 
-#hero .btn-outline-light:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+.navbar-brand:hover{
+    color:#fff;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  #hero {
-    background-attachment: scroll; /* fixed attachment causes blur on mobile */
-  }
-
-  #hero h1 {
-    text-align: center;
-  }
-
-  .hero-tagline {
-    text-align: center;
-  }
-
-  #hero .d-flex {
-    justify-content: center; /* centers buttons on mobile */
-  }
-
-  #hero .badge {
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.nav-link{
+    color:#ffffff;
+    font-weight:500;
+    margin:0 8px;
+    position:relative;
+    transition:.3s;
 }
 
-/* ─── Footer ────────────────────────────────── */
-#mainFooter {
-  background-color: #060f2a;   /* slightly darker than navbar */
-  padding: 60px 0 30px;
-  margin-top: auto;
+.nav-link:hover{
+    color:#ffc107;
 }
 
-.footer-text {
-  color: #a0aec0;              /* muted grey — readable but not blinding white */
-  font-size: 0.92rem;
-  line-height: 1.7;
+.nav-link.active{
+    color:#ffc107;
 }
 
-.footer-links li {
-  margin-bottom: 8px;
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#ffc107;
+    transition:.3s;
 }
 
-.footer-links a {
-  color: #a0aec0;
-  text-decoration: none;
-  transition: color 0.2s ease;
+.nav-link:hover::after{
+    width:100%;
 }
 
-.footer-links a:hover {
-  color: #ffc107;              /* gold on hover — matches your brand accent */
+.portal-btn{
+    background:#ffc107;
+    color:#000;
+    font-weight:600;
+    padding:10px 22px;
+    border-radius:30px;
+    transition:.3s;
+    text-decoration:none;
 }
 
-.footer-divider {
-  border-color: rgba(255, 255, 255, 0.1);
+.portal-btn:hover{
+    background:#ffcd39;
+    transform:translateY(-2px);
+    color:#000;
 }
 
-.footer-bottom p {
-  color: #718096;
-  font-size: 0.85rem;
+/* ===============================
+   Hero Section
+=================================*/
+
+.hero-section{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(5,22,52,.72),rgba(5,22,52,.72)),
+    url("../images/hero-bg.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero-content{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-section h1{
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero-section p{
+    max-width:650px;
+}
+
+.hero-section .btn{
+    border-radius:40px;
+    padding:14px 32px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-warning:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline-light:hover{
+    transform:translateY(-3px);
+}
+
+/* ===============================
+   Badge
+=================================*/
+
+.badge{
+    font-size:.9rem;
+    letter-spacing:.5px;
+}
+
+/* ===============================
+   Navbar Toggler
+=================================*/
+
+.navbar-toggler{
+    border:none;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+
+.navbar-toggler-icon{
+    filter:brightness(0) invert(1);
+}
+
+/* ===============================
+   Responsive
+=================================*/
+
+@media (max-width:991px){
+
+    #navbar{
+        padding:12px 0;
+    }
+
+    .navbar-collapse{
+        background:#0d2b52;
+        margin-top:15px;
+        padding:20px;
+        border-radius:12px;
+    }
+
+    .nav-link{
+        margin:10px 0;
+    }
+
+    .portal-btn{
+        width:100%;
+        text-align:center;
+        margin-top:15px;
+    }
+
+    .hero-section{
+        text-align:center;
+    }
+
+    .hero-content{
+        padding-top:80px;
+        padding-bottom:60px;
+    }
+
+    .hero-section h1{
+        font-size:2.6rem;
+    }
+
+    .hero-section p{
+        margin:auto;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero-section h1{
+        font-size:2.1rem;
+    }
+
+    .hero-section p{
+        font-size:1rem;
+    }
+
+    .hero-section .btn{
+        width:100%;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .navbar-brand h5{
+        font-size:1rem;
+    }
+
+    .hero-section h1{
+        font-size:1.8rem;
+    }
+
+    .badge{
+        font-size:.8rem;
+    }
+
+}
+/* Active Navigation Link */
+.navbar .nav-link.active {
+    color: #ffc107 !important;
+    font-weight: 600;
+}
+
+/* Hover Effect */
+.navbar .nav-link:hover {
+    color: #ffc107;
 }
