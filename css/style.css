@@ -255,3 +255,190 @@ body{
 .navbar .nav-link:hover {
     color: #ffc107;
 }
+/* ==========================================
+              FOOTER
+========================================== */
+
+.academy-footer{
+    background:#0d2b52;
+    color:#ffffff;
+    padding:70px 0 25px;
+    margin-top:80px;
+}
+
+.academy-footer h4,
+.academy-footer h5{
+    color:#ffc107;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.academy-footer small{
+    color:#d6d6d6;
+}
+
+.academy-footer p{
+    color:#d6d6d6;
+    line-height:1.8;
+    margin-bottom:0;
+}
+
+/* ==========================
+      Footer Links
+========================== */
+
+.footer-links{
+    padding-left:0;
+    margin:0;
+}
+
+.footer-links li{
+    list-style:none;
+    margin-bottom:12px;
+}
+
+.footer-links a{
+    color:#d6d6d6;
+    text-decoration:none;
+    transition:.3s;
+    display:inline-block;
+}
+
+.footer-links a:hover{
+    color:#ffc107;
+    transform:translateX(6px);
+}
+
+/* ==========================
+      Contact Info
+========================== */
+
+.contact-info{
+    padding-left:0;
+    margin:0;
+}
+
+.contact-info li{
+    list-style:none;
+    margin-bottom:15px;
+    color:#d6d6d6;
+    display:flex;
+    align-items:flex-start;
+}
+
+.contact-info i{
+    color:#ffc107;
+    margin-top:3px;
+}
+
+/* ==========================
+      Social Icons
+========================== */
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    background:rgba(255,255,255,.12);
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#ffc107;
+    color:#0d2b52;
+    transform:translateY(-5px);
+}
+
+/* ==========================
+      Footer Divider
+========================== */
+
+.academy-footer hr{
+    border-color:rgba(255,255,255,.15);
+}
+
+/* ==========================
+      Copyright
+========================== */
+
+.academy-footer .copyright{
+    font-size:.95rem;
+    color:#d6d6d6;
+}
+
+/* ==========================================
+          Responsive Footer
+========================================== */
+
+@media (max-width:991px){
+
+    .academy-footer{
+        text-align:center;
+    }
+
+    .academy-footer .d-flex{
+        justify-content:center;
+    }
+
+    .contact-info li{
+        justify-content:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .academy-footer{
+        padding:60px 0 20px;
+    }
+
+    .academy-footer h4{
+        font-size:1.4rem;
+    }
+
+    .academy-footer h5{
+        margin-top:20px;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .academy-footer{
+        padding:50px 0 15px;
+    }
+
+    .social-icons a{
+        width:40px;
+        height:40px;
+        font-size:18px;
+    }
+
+    .academy-footer p,
+    .academy-footer li{
+        font-size:.95rem;
+    }
+
+}
+.copyright{
+    text-align:center;
+    color:#d6d6d6;
+    font-size:0.95rem;
+    margin-top:10px;
+}
