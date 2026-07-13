@@ -1030,3 +1030,106 @@ body{
     text-align: justify;
     line-height: 1.8;
 }
+/*====================================
+        Results Header
+=====================================*/
+
+#results-header{
+    background:#f8f9fa;
+}
+
+#results-header h1{
+    color:#0d2b52;
+    margin-bottom:15px;
+}
+
+#results-header p{
+    color:#6c757d;
+}
+
+/*====================================
+        Filter Box
+=====================================*/
+
+.filter-box{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.form-label{
+
+    color:#0d2b52;
+
+}
+
+.form-select{
+
+    height:50px;
+
+    border-radius:10px;
+
+}
+
+.form-select:focus{
+
+    border-color:#ffc107;
+
+    box-shadow:0 0 0 .2rem rgba(255,193,7,.25);
+
+}
+/*====================================
+        Results Table
+=====================================*/
+
+#results-table{
+    background:#ffffff;
+}
+
+#results-table table{
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+#results-table thead{
+    background:#0d2b52;
+    color:#ffffff;
+}
+
+#results-table th{
+    padding:16px;
+    font-weight:600;
+}
+
+#results-table td{
+    padding:14px;
+}
+
+#results-table tbody tr:hover{
+    background:#fff8e1;
+    transition:.3s;
+}
+
+.alert-warning{
+    border:none;
+    border-left:5px solid #ffc107;
+    border-radius:10px;
+}
+
+@media (max-width:768px){
+
+    #results-table th,
+    #results-table td{
+        font-size:.9rem;
+        padding:10px;
+        white-space:nowrap;
+    }
+
+}
