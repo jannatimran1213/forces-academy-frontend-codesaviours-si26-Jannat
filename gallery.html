@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -79,24 +80,25 @@
 <section class="pb-4">
 
     <div class="container">
+<div class="text-center mb-4">
 
-        <div class="text-center">
+<button class="btn btn-warning filter-btn" data-filter="all">
+All
+</button>
 
-            <button class="btn btn-warning m-2">All</button>
+<button class="btn btn-outline-warning filter-btn" data-filter="events">
+Events
+</button>
 
-            <button class="btn btn-outline-warning m-2">
-                Events
-            </button>
+<button class="btn btn-outline-warning filter-btn" data-filter="sports">
+Sports
+</button>
 
-            <button class="btn btn-outline-warning m-2">
-                Sports
-            </button>
+<button class="btn btn-outline-warning filter-btn" data-filter="academic">
+Academic
+</button>
 
-            <button class="btn btn-outline-warning m-2">
-                Academic
-            </button>
-
-        </div>
+</div>
 
     </div>
 
@@ -111,82 +113,98 @@
 
     <!-- Image 1 -->
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 col-md-6 col-12" data-category="academic">
+            <a href="images/gallery1.png" class="glightbox">
         <div class="gallery-card">
             <img src="images/gallery1.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 2 -->
 
-    <div class="col-lg-3 col-md-6">
-        <div class="gallery-card">
+  <div class="col-lg-3 col-md-6 col-12" data-category="events">
+        <a href="images/gallery2.png" class="glightbox"> 
+    <div class="gallery-card">
             <img src="images/gallery2.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 3 -->
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 col-md-6 col-12" data-category="academic">
+            <a href="images/gallery3.png" class="glightbox">
         <div class="gallery-card">
             <img src="images/gallery3.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 4 -->
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 col-md-6 col-12" data-category="academic">
+           <a href="images/gallery4.png" class="glightbox">
         <div class="gallery-card">
             <img src="images/gallery4.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 5 -->
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 col-md-6 col-12" data-category="sports">
+          <a href="images/gallery5.png" class="glightbox">
         <div class="gallery-card">
             <img src="images/gallery5.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 6 -->
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 col-md-6 col-12" data-category="academic">
+            <a href="images/gallery6.png" class="glightbox">
         <div class="gallery-card">
             <img src="images/gallery6.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 7 -->
 
-    <div class="col-lg-3 col-md-6">
+    <div class="col-lg-3 col-md-6 col-12" data-category="events">
+            <a href="images/gallery7.png" class="glightbox">
         <div class="gallery-card">
             <img src="images/gallery7.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
     <!-- Image 8 -->
 
-    <div class="col-lg-3 col-md-6">
-        <div class="gallery-card">
+ <div class="col-lg-3 col-md-6 col-12" data-category="sports">
+        <a href="images/gallery8.png" class="glightbox">    
+    <div class="gallery-card">
             <img src="images/gallery8.png"
                  class="img-fluid"
                  alt="Gallery Image">
         </div>
+        </a>
     </div>
 
 </div>
@@ -351,6 +369,7 @@
 </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>

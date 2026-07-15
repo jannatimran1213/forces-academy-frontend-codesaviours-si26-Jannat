@@ -1,11 +1,7 @@
-/* ===============================
-   Google Font
-=================================*/
+/* Google Font*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ===============================
-   Global Styles
-=================================*/
+/*  Global Styles*/
 *{
     margin:0;
     padding:0;
@@ -22,9 +18,7 @@ body{
     color:#212529;
 }
 
-/* ===============================
-   Navbar
-=================================*/
+/* Navbar*/
 
 #navbar{
     background:#0d2b52;
@@ -99,18 +93,25 @@ body{
     color:#000;
 }
 
-/* ===============================
-   Hero Section
-=================================*/
-
+/*Hero Section*/
 .hero-section{
     min-height:100vh;
     background:
-    linear-gradient(rgba(5,22,52,.72),rgba(5,22,52,.72)),
-    url("../images/hero-bg.png");
+        linear-gradient(rgba(5,22,52,.72),rgba(5,22,52,.72)),
+        url("../images/hero-bg.png");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
+}
+
+@media (max-width:991px){
+
+    .hero-section{
+        background-size:contain;
+        background-position:top center;
+        background-color:#051634;
+    }
+
 }
 
 .hero-content{
@@ -143,18 +144,14 @@ body{
     transform:translateY(-3px);
 }
 
-/* ===============================
-   Badge
-=================================*/
+/* Badge*/
 
 .badge{
     font-size:.9rem;
     letter-spacing:.5px;
 }
 
-/* ===============================
-   Navbar Toggler
-=================================*/
+/* Navbar Toggler*/
 
 .navbar-toggler{
     border:none;
@@ -168,9 +165,7 @@ body{
     filter:brightness(0) invert(1);
 }
 
-/* ===============================
-   Responsive
-=================================*/
+/*  Responsive*/
 
 @media (max-width:991px){
 
@@ -255,9 +250,7 @@ body{
 .navbar .nav-link:hover {
     color: #ffc107;
 }
-/* ==========================================
-              FOOTER
-========================================== */
+/* FOOTER*/
 
 .academy-footer{
     background:#0d2b52;
@@ -283,9 +276,7 @@ body{
     margin-bottom:0;
 }
 
-/* ==========================
-      Footer Links
-========================== */
+/*  Footer Links */
 
 .footer-links{
     padding-left:0;
@@ -309,9 +300,7 @@ body{
     transform:translateX(6px);
 }
 
-/* ==========================
-      Contact Info
-========================== */
+/* Contact Info */
 
 .contact-info{
     padding-left:0;
@@ -331,9 +320,7 @@ body{
     margin-top:3px;
 }
 
-/* ==========================
-      Social Icons
-========================== */
+/* Social Icons */
 
 .social-icons{
     display:flex;
@@ -361,26 +348,20 @@ body{
     transform:translateY(-5px);
 }
 
-/* ==========================
-      Footer Divider
-========================== */
+/* Footer Divider*/
 
 .academy-footer hr{
     border-color:rgba(255,255,255,.15);
 }
 
-/* ==========================
-      Copyright
-========================== */
+/* Copyright */
 
 .academy-footer .copyright{
     font-size:.95rem;
     color:#d6d6d6;
 }
 
-/* ==========================================
-          Responsive Footer
-========================================== */
+/*  Responsive Footer */
 
 @media (max-width:991px){
 
@@ -442,9 +423,7 @@ body{
     font-size:0.95rem;
     margin-top:10px;
 }
-/* ==========================
-   About - Academy Overview
-========================== */
+/* About - Academy Overview*/
 
 #academy-overview{
     padding:80px 0;
@@ -475,9 +454,7 @@ body{
 #academy-overview img:hover{
     transform:scale(1.03);
 }
-/*====================================
-        Mission & Vision
-=====================================*/
+/*Mission & Vision*/
 
 #mission-vision{
     background:#f8f9fa;
@@ -538,9 +515,7 @@ body{
     }
 
 }
-/*====================================
-          Why Choose Us
-====================================*/
+/* Why Choose Us*/
 
 #why-choose-us{
     background:#ffffff;
@@ -592,9 +567,7 @@ body{
     }
 
 }
-/*====================================
-        Leadership Team
-=====================================*/
+/*Leadership Team*/
 
 #leadership-team{
     background:#f8f9fa;
@@ -650,9 +623,7 @@ body{
     }
 
 }
-/*====================================
-        Courses Header
-=====================================*/
+/* Courses Header*/
 
 #courses-header{
     background:#f8f9fa;
@@ -687,9 +658,7 @@ body{
     }
 
 }
-/*====================================
-            Courses Section
-=====================================*/
+/*Courses Section*/
 
 #courses{
     background:#ffffff;
@@ -750,9 +719,7 @@ body{
     }
 
 }
-/*====================================
-        Admissions Header
-=====================================*/
+/*Admissions Header*/
 
 #admissions-header{
     background:#f8f9fa;
@@ -789,9 +756,7 @@ body{
     }
 
 }
-/*====================================
-          How to Apply
-=====================================*/
+/*  How to Apply*/
 
 #how-to-apply{
     background:#ffffff;
@@ -853,9 +818,7 @@ body{
     }
 
 }
-/*====================================
-      Eligibility Criteria
-=====================================*/
+/* Eligibility Criteria*/
 
 #eligibility{
     background:#f8f9fa;
@@ -896,10 +859,7 @@ body{
     }
 
 }
-/*====================================
-      Required Documents
-=====================================*/
-
+/*Required Documents*/
 #required-documents{
     background:#ffffff;
 }
@@ -935,9 +895,7 @@ body{
     }
 
 }
-/*====================================
-          Fee Structure
-=====================================*/
+/*Fee Structure*/
 
 #fee-structure{
     background:#f8f9fa;
@@ -980,9 +938,7 @@ body{
     }
 
 }
-/*====================================
-          Apply Banner
-=====================================*/
+/*apply Banner*/
 
 #apply-banner{
     padding:80px 0;
@@ -1030,9 +986,7 @@ body{
     text-align: justify;
     line-height: 1.8;
 }
-/*====================================
-        Results Header
-=====================================*/
+/*Results Header*/
 
 #results-header{
     background:#f8f9fa;
@@ -1047,9 +1001,7 @@ body{
     color:#6c757d;
 }
 
-/*====================================
-        Filter Box
-=====================================*/
+/* Filter Box*/
 
 .filter-box{
 
@@ -1084,9 +1036,7 @@ body{
     box-shadow:0 0 0 .2rem rgba(255,193,7,.25);
 
 }
-/*====================================
-        Results Table
-=====================================*/
+/*Results Table=*/
 
 #results-table{
     background:#ffffff;
@@ -1133,9 +1083,7 @@ body{
     }
 
 }
-/*==============================
-        Gallery Header
-==============================*/
+/*Gallery Header*/
 
 #gallery-header{
     background:#f8f9fa;
@@ -1150,66 +1098,54 @@ body{
     margin:0 auto;
 }
 
-/*==============================
-      Gallery Buttons
-==============================*/
+/*Gallery Buttons*/
 
 .btn-outline-warning{
     border-width:2px;
 }
 
-/*==============================
-      Gallery Images
-==============================*/
+/*Gallery Images*/
 
 .gallery-card{
-
+    height:250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     overflow:hidden;
-
     border-radius:12px;
-
     box-shadow:0 5px 15px rgba(0,0,0,.1);
-
+    background:#fff;
 }
 
 .gallery-card img{
-
-    width:100%;
-
-    height:250px;
-
-    object-fit:cover;
-
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
     transition:.4s;
-
 }
 
 .gallery-card:hover img{
+    transform:scale(1.05);
+}
 
-    transform:scale(1.08);
+/* Tablet */
+@media (max-width:991px){
+
+    .gallery-card img{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+    }
 
 }
 
-/*==============================
-       Responsive
-==============================*/
+/* Mobile */
+@media (max-width:767px){
 
-@media(max-width:991px){
-
-.gallery-card img{
-
-height:220px;
-
-}
-
-}
-
-@media(max-width:767px){
-
-.gallery-card img{
-
-height:200px;
-
-}
+    .gallery-card img{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+    }
 
 }

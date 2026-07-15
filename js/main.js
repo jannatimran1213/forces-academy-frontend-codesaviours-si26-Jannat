@@ -1,13 +1,6 @@
-// ===============================
-// Forces Academy Website
-// Week 1 - Custom JavaScript
-// ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    // -------------------------------
     // Navbar shadow on scroll
-    // -------------------------------
     const navbar = document.getElementById("navbar");
 
     function updateNavbar() {
@@ -24,10 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", updateNavbar);
 
-
-    // -------------------------------
     // Close mobile menu after clicking
-    // -------------------------------
     const navLinks = document.querySelectorAll(".nav-link");
     const navCollapse = document.querySelector(".navbar-collapse");
 
@@ -49,11 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
-
-    // -------------------------------
     // Smooth fade animation
-    // -------------------------------
     const hero = document.querySelector(".hero-content");
 
     hero.style.opacity = "0";
@@ -66,16 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 250);
 
 });
-// ===============================
-// Forces Academy Website
-// Week 2 JavaScript
-// ===============================
+
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    // ===========================
     // Navbar Scroll Effect
-    // ===========================
 
     const navbar = document.getElementById("navbar");
 
@@ -99,11 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", navbarEffect);
 
-
-    // ===========================
     // Close Mobile Menu
-    // ===========================
-
     const navLinks = document.querySelectorAll(".nav-link");
     const navCollapse = document.querySelector(".navbar-collapse");
 
@@ -125,11 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    // ===========================
     // Hero Fade Animation
-    // ===========================
-
     const hero = document.querySelector(".hero-content");
 
     if (hero) {
@@ -147,10 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    // ===========================
     // Current Year in Footer
-    // ===========================
 
     const year = document.getElementById("currentYear");
 
@@ -159,5 +128,41 @@ document.addEventListener("DOMContentLoaded", function () {
         year.textContent = new Date().getFullYear();
 
     }
+
+});
+const lightbox = GLightbox({
+    selector: '.glightbox'
+});
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll("#gallery [data-category]");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const filter = this.dataset.filter;
+
+        // Remove active style from ALL buttons
+        filterButtons.forEach(btn => {
+            btn.classList.remove("btn-warning");
+            btn.classList.add("btn-outline-warning");
+        });
+
+        // Highlight the clicked button
+        this.classList.remove("btn-outline-warning");
+        this.classList.add("btn-warning");
+
+        // Filter gallery items
+        galleryItems.forEach(item => {
+
+            if (filter === "all" || item.dataset.category === filter) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+
+        });
+
+    });
 
 });
