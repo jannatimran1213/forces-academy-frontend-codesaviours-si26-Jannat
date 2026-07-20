@@ -1389,3 +1389,12 @@ body{
     }
 
 }
+.view-all-btn:hover{
+
+    background-color:#ffc107 !important;
+    color:#000 !important;
+    border-color:#ffc107 !important;
+    transform:none !important;
+    box-shadow:none !important;
+
+}
