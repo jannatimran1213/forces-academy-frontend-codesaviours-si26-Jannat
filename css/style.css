@@ -1398,3 +1398,62 @@ body{
     box-shadow:none !important;
 
 }
+/*==============================
+        Stats Counter
+==============================*/
+
+#stats{
+
+    background:#f8f9fa;
+
+}
+
+.stats-card{
+
+    background:#fff;
+
+    padding:35px 20px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stats-card i{
+
+    font-size:45px;
+
+    color:#ffc107;
+
+    margin-bottom:20px;
+
+}
+
+.stats-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#051634;
+
+}
+
+.stats-card p{
+
+    margin-top:10px;
+
+    font-weight:600;
+
+    color:#666;
+
+}

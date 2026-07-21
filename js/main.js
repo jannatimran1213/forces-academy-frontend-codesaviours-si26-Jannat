@@ -205,3 +205,65 @@ if (contactForm) {
 
 }
 
+const counters = document.querySelectorAll(".counter");
+
+let started = false;
+
+function startCounter() {
+
+    counters.forEach(counter => {
+
+        const target = +counter.dataset.target;
+
+        let count = 0;
+
+        const increment = target / 100;
+
+        const updateCounter = () => {
+
+            if (count < target) {
+
+                count += increment;
+
+                counter.innerText = Math.ceil(count);
+
+                requestAnimationFrame(updateCounter);
+
+            }
+
+            else {
+
+                counter.innerText = target;
+
+            }
+
+        };
+
+        updateCounter();
+
+    });
+
+}
+const statsSection = document.querySelector("#stats");
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting && !started) {
+
+            started = true;
+
+            startCounter();
+
+        }
+
+    });
+
+}, {
+
+    threshold:0.5
+
+});
+
+observer.observe(statsSection);
