@@ -244,26 +244,17 @@ function startCounter() {
     });
 
 }
-const statsSection = document.querySelector("#stats");
+const statsCards = document.querySelectorAll(".stats-card");
 
 const observer = new IntersectionObserver(entries => {
-
     entries.forEach(entry => {
-
         if (entry.isIntersecting && !started) {
-
             started = true;
-
             startCounter();
-
         }
-
     });
-
 }, {
-
-    threshold:0.5
-
+    threshold: 0.5
 });
 
-observer.observe(statsSection);
+statsCards.forEach(card => observer.observe(card));
