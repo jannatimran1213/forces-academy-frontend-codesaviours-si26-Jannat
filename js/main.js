@@ -130,9 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
-const lightbox = GLightbox({
-    selector: '.glightbox'
-});
+if (typeof GLightbox !== "undefined") {
+    const lightbox = GLightbox({
+        selector: '.glightbox'
+    });
+}
 const filterButtons = document.querySelectorAll(".filter-btn");
 const galleryItems = document.querySelectorAll("#gallery [data-category]");
 
@@ -258,3 +260,28 @@ const observer = new IntersectionObserver(entries => {
 });
 
 statsCards.forEach(card => observer.observe(card));
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const backToTop = document.getElementById("backToTop");
+
+    if (backToTop) {
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+    }
+
+});
