@@ -1,3 +1,8 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
 /* Google Font*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
@@ -54,10 +59,6 @@ body{
     transition:.3s;
 }
 
-.nav-link:hover{
-    color:#ffc107;
-}
-
 .nav-link.active{
     color:#ffc107;
 }
@@ -73,8 +74,14 @@ body{
     transition:.3s;
 }
 
-.nav-link:hover::after{
-    width:100%;
+@media (hover: hover) and (pointer: fine) {
+    .nav-link:hover{
+        color:#ffc107;
+    }
+
+    .nav-link:hover::after{
+        width:100%;
+    }
 }
 
 .portal-btn{
@@ -92,25 +99,51 @@ body{
     transform:translateY(-2px);
     color:#000;
 }
+/* Remove underline effect on mobile and tablet */
+@media (max-width:991px){
 
+    .nav-link::after{
+        display:none;
+    }
 
+    .nav-link:hover::after{
+        width:0;
+    }
+
+}
 
 /*Hero Section*/
 .hero-section{
     min-height:100vh;
     background:
         linear-gradient(rgba(5,22,52,.72),rgba(5,22,52,.72)),
-        url("../images/hero-bg.png");
+        url("../images/hero-bg-desktop.png");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
 }
 
+/* Tablet */
 @media (max-width:991px){
     .hero-section{
-        background-size: cover;         /* fill the box, don't shrink */
-        background-position: center;    /* adjust below if subject gets cut */
-        background-color: #051634;      /* fallback, rarely shown now */
+        background-image:
+            linear-gradient(rgba(5,22,52,.72),rgba(5,22,52,.72)),
+            url("../images/hero-bg-tablet.png");
+        background-size:cover;
+        background-position:center;
+        background-color:#051634;
+    }
+}
+
+/* Mobile */
+@media (max-width:576px){
+    .hero-section{
+        background-image:
+            linear-gradient(rgba(5,22,52,.72),rgba(5,22,52,.72)),
+            url("../images/hero-bg-mobile.png");
+        background-size:cover;
+        background-position:top center;
+        background-color:#051634;
     }
 }
 
@@ -136,19 +169,34 @@ body{
     transition:.3s;
 }
 
+@media (max-width: 576px) {
+    .hero-section .btn {
+        max-width: 240px;
+        width: auto;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+.hero-section .d-flex {
+flex-direction: column;
+align-items: center;
+    }
+}
+
+
 .btn-warning:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 .btn-outline-light:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 /* Badge*/
 
 .badge{
-    font-size:.9rem;
-    letter-spacing:.5px;
+font-size:.9rem;
+letter-spacing:.5px;
 }
 
 /* Navbar Toggler*/
@@ -990,6 +1038,12 @@ body{
 .justify-text{
     text-align: justify;
     line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .justify-text {
+        text-align: left;
+    }
 }
 /*Results Header*/
 
