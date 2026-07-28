@@ -737,7 +737,7 @@ section h2,
 /* COURSES HEADER */
 #courses-header {
     background-color: var(--bg-light);
-    padding: 80px 0;
+    padding: 60px 0 10px; 
 }
 
 #courses-header h1 {
@@ -769,7 +769,8 @@ section h2,
 }
 
 .course-card {
-    border: none;
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--navy-primary);
     border-radius: 15px;
     background-color: var(--bg-white);
     overflow: hidden;
@@ -814,6 +815,11 @@ section h2,
     color: var(--navy-primary);
     background-color: transparent;
     transition: all 0.3s ease;
+
+    /* FIX: Keep natural width and center it */
+    width: auto;
+    margin: 0 auto; /* Centers the button horizontally */
+    display: block; /* Required for margin auto to center */
 }
 
 .course-card .btn:hover {
@@ -1214,6 +1220,14 @@ section h2,
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-white);
 }
+.gallery-card {
+    position: relative;
+}
+
+.gallery-card .gallery-caption {
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+    font-weight: 600;
+}
 
 .gallery-card img {
     max-width: 100%;
@@ -1532,25 +1546,27 @@ html {
 
 #backToTop {
     position: fixed;
-    right: 25px;
-    bottom: 25px;
-    width: 55px;
-    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #ffc107; /* Academy Accent Gold */
+    color: white;            /* Dark Navy Icon */
     border: none;
     border-radius: 50%;
-    background-color: var(--gold-accent);
-    color: var(--navy-primary);
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    display: none;
-    z-index: 999;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    z-index: 999;
 }
 
 #backToTop:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-5px);
+    background-color: #e0a800; /* Slightly darker gold on hover */
+    transform: translateY(-3px);
 }
 /* UNIFIED ICON BADGES - SOLID NAVY (STYLE 1) */
 
@@ -1647,4 +1663,45 @@ div.contact-card i,
     color: #666666 !important;
     margin: 0 !important;
     line-height: 1.5 !important;
+}
+/* Target the testimonial profile avatar border */
+.testimonial-img,
+.student-avatar img {
+    border: 3px solid #0e2a47 !important; /* Forces the navy blue border */
+}
+/* Force the footer container to center its contents */
+.course-card .card-footer {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Overriding Bootstrap's d-block utility class */
+.course-card .card-footer a.card-btn.d-block {
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 130px; /* Adjust this to make it smaller or larger */
+    max-width: 160px;
+    padding: 8px 16px;
+    margin: 0 auto;
+    
+    /* Styling */
+    background-color: transparent;
+    color: #0e2a47;
+    border: 2px solid #0e2a47;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.course-card .card-footer a.card-btn.d-block:hover {
+    background-color: #0e2a47;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+#courses {
+    background-color: var(--bg-light);
+    padding-top: 10px;
 }
