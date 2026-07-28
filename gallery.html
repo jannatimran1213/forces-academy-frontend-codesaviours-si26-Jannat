@@ -9,7 +9,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!-- GLightbox CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -62,41 +68,40 @@
 
     <!-- Gallery Header -->
     <section id="gallery-header" class="py-5">
-        <div class="container text-center">
+        <div class="container text-center" data-aos="fade-up">
 
             <span class="section-subtitle">OUR GALLERY</span>
 
-            <h1 class="fw-bold mt-2">Campus Gallery</h1>
+            <h1 class="display-4 fw-bold mt-2">Campus Gallery</h1>
 
-            <p class="section-description">
-                Explore memorable moments from campus life, training drills,
-                sports competitions, and passing-out ceremonies at Forces
-                Academy Faisalabad.
+            <p class="lead text-muted mx-auto intro-text justify-text mt-3">
+                Explore memorable moments from campus life, physical training drills,
+                classroom lectures, obstacle courses, and passing-out ceremonies 
+                at Forces Academy Faisalabad.
             </p>
 
         </div>
     </section>
 
     <!-- Gallery Filter Buttons -->
-
     <section class="pb-4">
 
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="text-center mb-4">
 
-                <button class="btn btn-warning filter-btn" data-filter="all">
+                <button class="btn btn-warning filter-btn active me-1 mb-2" data-filter="all">
                     All
                 </button>
 
-                <button class="btn btn-outline-warning filter-btn" data-filter="events">
+                <button class="btn btn-outline-warning filter-btn me-1 mb-2" data-filter="events">
                     Events
                 </button>
 
-                <button class="btn btn-outline-warning filter-btn" data-filter="sports">
-                    Sports
+                <button class="btn btn-outline-warning filter-btn me-1 mb-2" data-filter="sports">
+                    Sports & Fitness
                 </button>
 
-                <button class="btn btn-outline-warning filter-btn" data-filter="academic">
+                <button class="btn btn-outline-warning filter-btn mb-2" data-filter="academic">
                     Academic
                 </button>
 
@@ -106,8 +111,7 @@
 
     </section>
 
-    <!-- Gallery Grid -->
-
+  <!-- Gallery Grid -->
     <section id="gallery" class="pb-5">
 
         <div class="container">
@@ -115,97 +119,181 @@
             <div class="row g-4">
 
                 <!-- Image 1 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="academic">
-                    <a href="images/gallery1.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery1.png"
-                                 class="img-fluid"
-                                 alt="Classroom Training Session">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="academic" data-aos="fade-up" data-aos-delay="100">
+                    <a href="images/gallery1.png" 
+                       class="glightbox" 
+                       data-title="Classroom Training Session" 
+                       data-description="Interactive conceptual lectures designed for initial academic test readiness.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery1.png" class="img-fluid w-100" alt="Classroom Training Session">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Classroom Lecture</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 2 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="events">
-                    <a href="images/gallery2.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery2.png"
-                                 class="img-fluid"
-                                 alt="Passing Out Parade">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="200">
+                    <a href="images/gallery2.png" 
+                       class="glightbox" 
+                       data-title="Passing Out Parade" 
+                       data-description="Annual celebration and drill demonstration honoring recommended candidates.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery2.png" class="img-fluid w-100" alt="Passing Out Parade">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Passing Out Parade</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 3 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="academic">
-                    <a href="images/gallery3.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery3.png"
-                                 class="img-fluid"
-                                 alt="ISSB Preparation Class">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="academic" data-aos="fade-up" data-aos-delay="300">
+                    <a href="images/gallery3.png" 
+                       class="glightbox" 
+                       data-title="ISSB Preparation Class" 
+                       data-description="Psychological assessment guidance and group discussion practice.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery3.png" class="img-fluid w-100" alt="ISSB Preparation Class">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">ISSB Coaching</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 4 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="academic">
-                    <a href="images/gallery4.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery4.png"
-                                 class="img-fluid"
-                                 alt="Written Test Session">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="academic" data-aos="fade-up" data-aos-delay="400">
+                    <a href="images/gallery4.png" 
+                       class="glightbox" 
+                       data-title="Written Test Mock Exam" 
+                       data-description="Time-bound mock evaluation mimicking official selection center exams.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery4.png" class="img-fluid w-100" alt="Written Test Session">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Written Mock Test</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 5 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="sports">
-                    <a href="images/gallery5.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery5.png"
-                                 class="img-fluid"
-                                 alt="Physical Fitness Training">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="sports" data-aos="fade-up" data-aos-delay="100">
+                    <a href="images/gallery5.png" 
+                       class="glightbox" 
+                       data-title="Physical Fitness Training" 
+                       data-description="Morning physical conditioning and stamina building exercises.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery5.png" class="img-fluid w-100" alt="Physical Fitness Training">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Physical Fitness</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 6 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="academic">
-                    <a href="images/gallery6.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery6.png"
-                                 class="img-fluid"
-                                 alt="Interview Preparation Session">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="academic" data-aos="fade-up" data-aos-delay="200">
+                    <a href="images/gallery6.png" 
+                       class="glightbox" 
+                       data-title="Interview Coaching Session" 
+                       data-description="One-on-one mock interviews conducted by experienced ex-military officers.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery6.png" class="img-fluid w-100" alt="Interview Preparation Session">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Mock Interview</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 7 -->
-
-                <div class="col-lg-3 col-md-6 col-12" data-category="events">
-                    <a href="images/gallery7.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery7.png"
-                                 class="img-fluid"
-                                 alt="Cadet Award Ceremony">
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="300">
+                    <a href="images/gallery7.png" 
+                       class="glightbox" 
+                       data-title="Cadet Award Ceremony" 
+                       data-description="Recognizing top-performing students in academics and fitness drills.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery7.png" class="img-fluid w-100" alt="Cadet Award Ceremony">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Award Ceremony</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- Image 8 -->
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="sports" data-aos="fade-up" data-aos-delay="400">
+                    <a href="images/gallery8.png" 
+                       class="glightbox" 
+                       data-title="Obstacle Course Training" 
+                       data-description="Outdoor obstacle drills to prepare candidates for ISSB physical tasks.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery8.png" class="img-fluid w-100" alt="Obstacle Course Training">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Obstacle Course</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-                <div class="col-lg-3 col-md-6 col-12" data-category="sports">
-                    <a href="images/gallery8.png" class="glightbox">
-                        <div class="gallery-card">
-                            <img src="images/gallery8.png"
-                                 class="img-fluid"
-                                 alt="Obstacle Course Training">
+                <!-- Image 9 -->
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="sports" data-aos="fade-up" data-aos-delay="100">
+                    <a href="images/gallery9.png" 
+                       class="glightbox" 
+                       data-title="1.6km Running Test Practice" 
+                       data-description="Timed endurance runs matching the official physical standards of Armed Forces.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery9.png" class="img-fluid w-100" alt="Running Test Practice">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Endurance Run</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Image 10 -->
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="200">
+                    <a href="images/gallery10.png" 
+                       class="glightbox" 
+                       data-title="Guest Speaker Seminar" 
+                       data-description="Motivational lectures delivered by retired senior defense officers.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery10.png" class="img-fluid w-100" alt="Guest Speaker Seminar">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Motivational Seminar</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Image 11 -->
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="academic" data-aos="fade-up" data-aos-delay="300">
+                    <a href="images/gallery11.png" 
+                       class="glightbox" 
+                       data-title="Computer-Based Initial Test Room" 
+                       data-description="Candidates practicing verbal and non-verbal intelligence tests on computers.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery11.png" class="img-fluid w-100" alt="Computer Test Lab">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Intelligence Test Lab</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Image 12 -->
+                <div class="col-lg-3 col-md-6 col-12 gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="400">
+                    <a href="images/gallery12.png" 
+                       class="glightbox" 
+                       data-title="Defense Day Celebration" 
+                       data-description="Cadets participating in patriotic national day celebrations at campus.">
+                        <div class="gallery-card position-relative overflow-hidden rounded">
+                            <img src="images/gallery12.png" class="img-fluid w-100" alt="Defense Day Celebration">
+                            <div class="gallery-caption p-3 position-absolute bottom-0 start-0 end-0 text-white">
+                                <h6 class="mb-0">Defense Day</h6>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -217,7 +305,6 @@
     </section>
 
     <!-- Footer Section -->
-
     <footer class="academy-footer mt-5">
 
         <div class="container">
@@ -225,7 +312,6 @@
             <div class="row gy-4">
 
                 <!-- Academy Information -->
-
                 <div class="col-lg-4 col-md-6">
 
                     <div class="d-flex align-items-center mb-3">
@@ -258,7 +344,6 @@
                 </div>
 
                 <!-- Quick Links -->
-
                 <div class="col-lg-2 col-md-6">
 
                     <h5>Quick Links</h5>
@@ -284,7 +369,6 @@
                 </div>
 
                 <!-- Contact -->
-
                 <div class="col-lg-3 col-md-6">
 
                     <h5>Contact Us</h5>
@@ -320,7 +404,6 @@
                 </div>
 
                 <!-- Social Media -->
-
                 <div class="col-lg-3 col-md-6">
 
                     <h5>Connect With Us</h5>
@@ -358,7 +441,6 @@
             <hr class="my-4">
 
             <!-- Copyright -->
-
             <div class="text-center pt-3">
 
                 <p class="mb-0 copyright">
@@ -373,17 +455,33 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GLightbox JS -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Lightbox
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true
+        });
+    </script>
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 
     <!-- Back to Top Button -->
-
     <button id="backToTop" aria-label="Back to Top">
-
         <i class="bi bi-arrow-up"></i>
-
     </button>
 </body>
 </html>
