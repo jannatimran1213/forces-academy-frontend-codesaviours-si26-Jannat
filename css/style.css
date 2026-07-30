@@ -1041,13 +1041,13 @@ section h2,
 }
 
 .fee-table th {
-    text-align: center;
+    text-align: left;
     padding: 16px;
     font-weight: 600;
 }
 
 .fee-table td {
-    text-align: center;
+    text-align: left;
     padding: 15px;
 }
 
@@ -1803,15 +1803,7 @@ div.contact-card i,
         font-size: 1rem;
     }
 }
-@media (max-width: 768px) {
-    .mission-card p,
-    .vision-card p,
-    .apply-item p,
-    .course-card p,
-    .academy-footer p {
-        text-align: left;
-    }
-}
+
 
 @media (max-width: 991px) {
     .hero-section p {
@@ -1885,5 +1877,23 @@ div.contact-card i,
     #gallery-header p:first-of-type,
     #results-header p:first-of-type {
         text-align: justify;
+        color: var(--text-body) !important;
     }
+}
+p.text-muted {
+    color: var(--text-body) !important;
+}
+.fee-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.fee-table th:first-child,
+.fee-table td:first-child {
+    width: 40%;
+}
+
+.fee-table th:not(:first-child),
+.fee-table td:not(:first-child) {
+    width: 30%;
 }
