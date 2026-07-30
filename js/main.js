@@ -287,3 +287,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 AOS.init({ duration: 800, once: true });
+
+
+
+/* 2. ROTATING QUOTES / MOTTOS (slide from side) */
+const quotes = [
+    { text: "Discipline is the soul of an army.", author: "George Washington" },
+    { text: "The more you sweat in training, the less you bleed in battle.", author: "Military Proverb" },
+    { text: "Courage is not the absence of fear, but the triumph over it.", author: "Nelson Mandela" },
+    { text: "Success is where preparation and opportunity meet.", author: "Bobby Unser" }
+];
+
+const quoteEl = document.getElementById("rotatingQuote");
+
+if (quoteEl) {
+    let quoteIndex = 0;
+
+    setInterval(() => {
+        // Slide current quote out to the left
+        quoteEl.classList.add("slide-out");
+
+        setTimeout(() => {
+            // Update text
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            const q = quotes[quoteIndex];
+            quoteEl.innerHTML = `"${q.text}" <span class="quote-author">— ${q.author}</span>`;
+
+            // Position it off-screen to the right, no transition
+            quoteEl.classList.remove("slide-out");
+            quoteEl.classList.add("slide-in-start");
+
+            // Force reflow so the browser registers the new position
+            void quoteEl.offsetWidth;
+
+            // Remove slide-in-start so it transitions back to center
+            quoteEl.classList.remove("slide-in-start");
+        }, 600);
+
+    }, 5000);
+}

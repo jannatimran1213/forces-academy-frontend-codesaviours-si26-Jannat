@@ -58,6 +58,7 @@ section h2,
     font-weight: 700;
 }
 
+
 /* Subtitles with Gold Accent Line */
 .section-subtitle {
     color: var(--navy-primary);
@@ -84,6 +85,10 @@ section h2,
     padding: 14px 0;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+#navbar {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    border-bottom: 2px solid var(--gold-accent);
 }
 
 .navbar-brand {
@@ -220,21 +225,20 @@ section h2,
     color: var(--navy-primary);
     background-color: rgba(13, 43, 82, 0.08); /* Transparent Navy Badge */
 }
-/* HERO SECTION */
+/* HERO SECTION (Desktop & Base Styles) */
 .hero-section {
-    min-height: 100vh;
-    background: 
-        linear-gradient(
-            90deg,
-            rgba(5, 22, 52, 0.85) 0%,
-            rgba(5, 22, 52, 0.65) 35%,
-            rgba(5, 22, 52, 0.25) 65%,
-            rgba(5, 22, 52, 0) 100%
-        ),
-        url("../images/hero-bgs.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 100vh; 
+  /* Lightened opacity values (0.45 down to 0) */
+  background: linear-gradient(
+    90deg, 
+    rgba(5, 22, 52, 0.45) 0%, 
+    rgba(5, 22, 52, 0.30) 35%, 
+    rgba(5, 22, 52, 0.15) 65%, 
+    rgba(5, 22, 52, 0) 100%
+  ), url("../images/hero-bgs.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -333,6 +337,9 @@ section h2,
         background-position: center;
         background-color: var(--navy-dark);
     }
+    .hero-section .d-flex {
+        justify-content: center;
+    }
 
     .hero-content {
         padding-top: 80px;
@@ -356,10 +363,17 @@ section h2,
 
     .hero-section p {
         font-size: 1rem;
+      
     }
 
     .hero-section .btn {
         width: 100%;
+    }
+       /* All content left-aligned, buttons left-aligned too */
+    .hero-section .d-flex {
+        flex-direction: column;
+        align-items: flex-start;      /* was center */
+        justify-content: flex-start;  /* overrides tablet's center */
     }
 }
 
@@ -372,16 +386,24 @@ section h2,
         background-size: cover;
         background-position: top center;
         background-color: var(--navy-dark);
+        
     }
+      .hero-section p {
+    text-align: left;   /* Flushes text to the left edge to align with the heading */
+    max-width: 420px;   /* Pulls the right edge in to match the heading's width */
+    margin: 1.5rem auto; /* Centers the bounding box container on the screen */
+    line-height: 1.5;   /* Ensures clean spacing between lines */
+    padding: 0 15px;    /* Keeps a safe safety margin from the screen edges */
+  }
 
-    .navbar-brand h5 {
+.navbar-brand h5 {
         font-size: 1rem;
     }
 
     .hero-section h1 {
         font-size: 1.8rem;
     }
-
+ 
     .badge {
         font-size: 0.8rem;
     }
@@ -625,7 +647,7 @@ section h2,
     .mission-card,
     .vision-card {
         padding: 30px 25px;
-        text-align: center;
+        text-align: left;
     }
 
     .icon-box {
@@ -771,15 +793,13 @@ section h2,
 }
 
 .course-card {
-    border: 1px solid var(--border-color);
-    border-top: 5px solid var(--navy-primary);
+    border: 1px solid gainsboro;
     border-radius: 15px;
     background-color: var(--bg-white);
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-
 .course-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
@@ -833,7 +853,7 @@ section h2,
 /* Responsive Courses */
 @media (max-width: 768px) {
     .course-card {
-        text-align: center;
+        text-align: left;
     }
 }
 /* ADMISSIONS HEADER */
@@ -948,7 +968,7 @@ section h2,
 
 .eligibility-table th {
     padding: 16px;
-    text-align: center;
+  
 }
 
 .eligibility-table td {
@@ -1092,10 +1112,7 @@ section h2,
     }
 }
 
-.justify-text {
-    text-align: justify;
-    line-height: 1.8;
-}
+
 
 @media (max-width: 768px) {
     .justify-text {
@@ -1354,9 +1371,7 @@ section h2,
 }
 
 @media (max-width: 991px) {
-    #about-preview {
-        text-align: center;
-    }
+   
 
     .feature-box {
         justify-content: center;
@@ -1730,4 +1745,145 @@ div.contact-card i,
 /* Subtle Hover Zoom Effect */
 .faculty-card:hover .faculty-img {
     transform: scale(1.05);
+}
+
+/* ROTATING MOTTOS / QUOTES */
+#motto-quotes {
+    background-color: var(--bg-white);
+    padding: 70px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+#motto-quotes .quote-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#motto-quotes #rotatingQuote {
+    color: var(--text-heading);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Slides out to the left as it leaves */
+#motto-quotes #rotatingQuote.slide-out {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+/* Starts off-screen to the right before sliding in */
+#motto-quotes #rotatingQuote.slide-in-start {
+    transition: none;
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+#motto-quotes #rotatingQuote .quote-author {
+    display: block;
+    margin-top: 10px;
+    color: var(--navy-primary);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    #motto-quotes #rotatingQuote {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .mission-card p,
+    .vision-card p,
+    .apply-item p,
+    .course-card p,
+    .academy-footer p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-section p {
+        text-align: left;
+    }
+}
+@media (max-width: 769px) {
+    .mission-card p,
+    .vision-card p,
+    .apply-item p,
+    .course-card p,
+    .admissions-header p {
+        text-align: justify;
+    }
+}
+.justify-text{
+    text-align: justify;
+}
+.hero-section p {
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .hero-section p {
+        text-align: left;
+    }
+}
+.justify-text{
+    text-align: justify;
+}
+/* MOBILE STYLES (Targets Tecno Spark 20 and other phones) */
+@media (max-width: 575px) {
+  .hero-section {
+    min-height: 50vh; 
+    
+    /* Lightened vertical gradient for mobile (0.50 down to 0.20) */
+    background: linear-gradient(
+      0deg, 
+      rgba(5, 22, 52, 0.50) 0%, 
+      rgba(5, 22, 52, 0.20) 100%
+    ), url("../images/hero-bgs.png");
+    
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-content {
+    min-height: 50vh; 
+    padding: 30px 15px; 
+  }
+}
+.mission-card,
+.vision-card {
+    text-align: center;
+}
+
+.mission-card .icon-box,
+.vision-card .icon-box {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission-card h3,
+.vision-card h3 {
+    text-align: center;
+}
+@media (max-width: 991px) {
+    #admissions-header p:first-of-type,
+    #contact-header p:first-of-type,
+    #courses-header p:first-of-type,
+    #gallery-header p:first-of-type,
+    #results-header p:first-of-type {
+        text-align: justify;
+    }
 }
