@@ -28,7 +28,6 @@ https://jannatimran1213.github.io/forces-academy-frontend-codesaviours-si26-Jann
 - AOS (Animate On Scroll)
 
 ##  Features
-
 - Responsive design
 - Sticky navigation bar
 - Hero section
