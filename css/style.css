@@ -1159,6 +1159,7 @@ section h2,
 /* RESULTS TABLE */
 #results-table {
     background-color: var(--bg-white);
+    
 }
 
 #results-table table {
@@ -1179,6 +1180,7 @@ section h2,
 
 #results-table td {
     padding: 14px;
+text-align: left;
 }
 
 #results-table tbody tr:hover {
@@ -1896,4 +1898,13 @@ p.text-muted {
 .fee-table th:not(:first-child),
 .fee-table td:not(:first-child) {
     width: 30%;
+}
+@media (max-width: 768px) {
+    #mission-vision .text-center p.text-muted,
+    #why-choose-us .text-center p.text-muted,
+    #faculty .text-center p.text-muted,
+    #eligibility .text-center p.text-muted,
+    #fee-structure .text-center p.text-muted {
+        text-align: justify;
+    }
 }
