@@ -1908,3 +1908,167 @@ p.text-muted {
         text-align: justify;
     }
 }
+/* THEME TOGGLE BUTTON */
+.theme-toggle-btn {
+    background-color: transparent;
+    border: 2px solid var(--gold-accent);
+    color: var(--gold-accent);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--gold-accent);
+    color: var(--navy-primary);
+    transform: rotate(20deg);
+}
+
+@media (max-width: 991px) {
+    .theme-toggle-btn {
+        margin: 15px auto;
+    }
+}
+/* DARK MODE VARIABLE OVERRIDES */
+html.dark-mode {
+    --bg-white: #12181f;
+    --bg-light: #1a222c;
+    --text-body: #d6d6d6;
+    --text-heading: #ffffff;
+    --border-color: #2a3441;
+}
+
+html.dark-mode body {
+    background-color: var(--bg-white);
+    color: var(--text-body);
+}
+/* Cards & Sections */
+html.dark-mode .course-card,
+html.dark-mode .mission-card,
+html.dark-mode .vision-card,
+html.dark-mode .feature-card,
+html.dark-mode .team-card,
+html.dark-mode .stats-card,
+html.dark-mode .contact-card,
+html.dark-mode .testimonial-card,
+html.dark-mode .course-preview-card,
+html.dark-mode .filter-box,
+html.dark-mode .eligibility-table,
+html.dark-mode .fee-table {
+    background-color: #1a222c;
+    color: var(--text-body);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Tables */
+html.dark-mode .eligibility-table tbody tr:hover,
+html.dark-mode .fee-table tbody tr:hover,
+html.dark-mode #results-table tbody tr:hover {
+    background-color: rgba(255, 193, 7, 0.08);
+}
+
+html.dark-mode .table {
+    color: var(--text-body);
+    border-color: var(--border-color);
+}
+
+/* Form Controls */
+html.dark-mode .form-control,
+html.dark-mode .form-select {
+    background-color: #1a222c;
+    border-color: var(--border-color);
+    color: var(--text-body);
+}
+
+html.dark-mode .form-control::placeholder {
+    color: #888;
+}
+
+/* Contact card override (since it has !important rules) */
+html.dark-mode .contact-card,
+html.dark-mode div.contact-card {
+    background-color: #1a222c !important;
+}
+
+html.dark-mode .contact-card p {
+    color: #b0b0b0 !important;
+}
+
+html.dark-mode .contact-card h5,
+html.dark-mode .contact-card h4,
+html.dark-mode .contact-card .card-title {
+    color: #ffffff !important;
+}
+
+/* List groups (How to Apply, Required Documents) */
+html.dark-mode .apply-item,
+html.dark-mode .document-item {
+    background-color: #1a222c;
+    border-color: var(--border-color);
+    color: var(--text-body);
+}
+
+html.dark-mode .apply-item:hover,
+html.dark-mode .document-item:hover {
+    background-color: #222b38;
+}
+
+/* Gallery */
+html.dark-mode .gallery-card {
+    background-color: #1a222c;
+}
+
+/* Section borders (stats, featured-courses) */
+html.dark-mode #stats,
+html.dark-mode #featured-courses {
+    border-color: var(--border-color);
+}
+
+/* Text-muted override for dark mode */
+html.dark-mode p.text-muted {
+    color: #a8a8a8 !important;
+}
+body, .course-card, .mission-card, .vision-card, .feature-card,
+.team-card, .stats-card, .contact-card, .testimonial-card,
+.course-preview-card, .form-control, .form-select {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+/* Force Bootstrap bg utilities to respect dark mode */
+html.dark-mode .bg-white {
+    background-color: var(--bg-white) !important;
+}
+
+html.dark-mode .bg-light {
+    background-color: var(--bg-light) !important;
+}
+html.dark-mode {
+    background-color: var(--bg-white);
+}
+
+html.dark-mode #about-preview,
+html.dark-mode #stats,
+html.dark-mode #testimonials,
+html.dark-mode #academy-overview,
+html.dark-mode #why-choose-us,
+html.dark-mode #courses,
+html.dark-mode #admissions-header,
+html.dark-mode #how-to-apply,
+html.dark-mode #results-header,
+html.dark-mode #gallery-header,
+html.dark-mode #required-documents {
+    background-color: var(--bg-white) !important;
+}
+
+html.dark-mode #mission-vision,
+html.dark-mode #leadership-team,
+html.dark-mode #fee-structure,
+html.dark-mode #eligibility,
+html.dark-mode #featured-courses {
+    background-color: var(--bg-light) !important;
+}

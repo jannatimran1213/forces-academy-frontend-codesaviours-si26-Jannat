@@ -326,3 +326,39 @@ if (quoteEl) {
 
     }, 5000);
 }
+// ===== DARK / LIGHT MODE TOGGLE =====
+function initThemeToggle() {
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const rootHtml = document.documentElement;
+
+    if (!themeToggleBtn) {
+        console.warn('Theme toggle button not found on this page.');
+        return;
+    }
+
+    const savedTheme = localStorage.getItem('forces-academy-theme');
+    if (savedTheme === 'dark') {
+        rootHtml.classList.add('dark-mode');
+        updateIcon(true);
+    }
+
+    themeToggleBtn.addEventListener('click', function () {
+        const isDark = rootHtml.classList.toggle('dark-mode');
+        localStorage.setItem('forces-academy-theme', isDark ? 'dark' : 'light');
+        updateIcon(isDark);
+    });
+
+    function updateIcon(isDark) {
+        if (!themeIcon) return;
+        themeIcon.classList.toggle('bi-moon-stars-fill', !isDark);
+        themeIcon.classList.toggle('bi-sun-fill', isDark);
+    }
+}
+
+// Works whether DOM is already ready or not
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+} else {
+    initThemeToggle();
+}
