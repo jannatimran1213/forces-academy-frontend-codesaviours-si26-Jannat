@@ -1908,7 +1908,51 @@ p.text-muted {
         text-align: justify;
     }
 }
-/* THEME TOGGLE BUTTON */
+/* ============================================================
+   DARK MODE — COMPLETE STYLESHEET
+   Add this entire block once, at the end of style.css
+   ============================================================ */
+
+/* ---------- 1. ROOT VARIABLE OVERRIDES ---------- */
+html.dark-mode {
+    --bg-white: #12181f;
+    --bg-light: #1a222c;
+    --text-body: #d6d6d6;
+    --text-heading: #ffffff;
+    --border-color: #2a3441;
+}
+
+html.dark-mode body {
+    background-color: var(--bg-white) !important;
+    color: var(--text-body) !important;
+}
+
+/* ---------- 2. BOOTSTRAP UTILITY OVERRIDES ---------- */
+html.dark-mode .bg-white {
+    background-color: var(--bg-white) !important;
+}
+
+html.dark-mode .bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+html.dark-mode p.text-muted {
+    color: #a8a8a8 !important;
+}
+
+html.dark-mode .text-dark {
+    color: #ffffff !important;
+}
+
+/* ---------- 3. NAVBAR & FOOTER ----------
+   Already navy-based, so they stay visually consistent.
+   No structural change needed — just confirming text stays white. */
+html.dark-mode #navbar,
+html.dark-mode .academy-footer {
+    background-color: var(--navy-primary);
+}
+
+/* ---------- 4. THEME TOGGLE BUTTON ---------- */
 .theme-toggle-btn {
     background-color: transparent;
     border: 2px solid var(--gold-accent);
@@ -1935,62 +1979,119 @@ p.text-muted {
         margin: 15px auto;
     }
 }
-/* DARK MODE VARIABLE OVERRIDES */
-html.dark-mode {
-    --bg-white: #12181f;
-    --bg-light: #1a222c;
-    --text-body: #d6d6d6;
-    --text-heading: #ffffff;
-    --border-color: #2a3441;
+
+/* ---------- 5. HERO SECTION ---------- */
+html.dark-mode .hero-section::after {
+    content: '';
+}
+/* Hero already uses a dark navy gradient overlay, so it stays readable
+   in both modes — no override needed for text color (already white). */
+
+/* ---------- 6. HEADINGS (SECTION TITLES) ---------- */
+html.dark-mode section h2,
+html.dark-mode #stats h2.fw-bold,
+html.dark-mode #academy-overview h2,
+html.dark-mode #mission-vision h2,
+html.dark-mode #mission-vision h3,
+html.dark-mode #about-preview h2,
+html.dark-mode #courses-header h1,
+html.dark-mode #admissions-header h1,
+html.dark-mode #results-header h1,
+html.dark-mode #gallery-header h1,
+html.dark-mode #contact-header h1 {
+    color: #ffffff !important;
 }
 
-html.dark-mode body {
-    background-color: var(--bg-white);
-    color: var(--text-body);
+html.dark-mode .section-subtitle {
+    color: #ffffff;
 }
-/* Cards & Sections */
+
+html.dark-mode .section-subtitle::after {
+    background-color: var(--gold-accent); /* keep gold underline */
+}
+
+/* ---------- 7. CARDS (GENERAL) ---------- */
 html.dark-mode .course-card,
 html.dark-mode .mission-card,
 html.dark-mode .vision-card,
 html.dark-mode .feature-card,
 html.dark-mode .team-card,
+html.dark-mode .faculty-card,
 html.dark-mode .stats-card,
 html.dark-mode .contact-card,
 html.dark-mode .testimonial-card,
 html.dark-mode .course-preview-card,
 html.dark-mode .filter-box,
 html.dark-mode .eligibility-table,
-html.dark-mode .fee-table {
+html.dark-mode .fee-table,
+html.dark-mode #contact-form .card {
     background-color: #1a222c;
     color: var(--text-body);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Tables */
-html.dark-mode .eligibility-table tbody tr:hover,
-html.dark-mode .fee-table tbody tr:hover,
-html.dark-mode #results-table tbody tr:hover {
-    background-color: rgba(255, 193, 7, 0.08);
+/* Card headings → white */
+html.dark-mode .feature-card h4,
+html.dark-mode .team-card h5,
+html.dark-mode .course-card h4,
+html.dark-mode .testimonial-card h5,
+html.dark-mode .course-preview-card h4,
+html.dark-mode .faculty-card h4.card-title,
+html.dark-mode .faculty-card .text-dark {
+    color: #ffffff !important;
 }
 
-html.dark-mode .table {
+/* Card body text */
+html.dark-mode .course-card p,
+html.dark-mode .course-details li,
+html.dark-mode .feature-card p,
+html.dark-mode .course-preview-card p,
+html.dark-mode .testimonial-text {
     color: var(--text-body);
-    border-color: var(--border-color);
 }
 
-/* Form Controls */
-html.dark-mode .form-control,
-html.dark-mode .form-select {
+/* ---------- 8. ICON BOXES ----------
+   Navy circle + white icon already works fine on dark backgrounds,
+   so no change is required — kept as-is intentionally. */
+
+/* Feature-box (About Preview row of 4 icons, home page) */
+html.dark-mode .feature-box {
     background-color: #1a222c;
     border-color: var(--border-color);
-    color: var(--text-body);
 }
 
-html.dark-mode .form-control::placeholder {
-    color: #888;
+html.dark-mode .feature-box i {
+    color: var(--gold-accent);
 }
 
-/* Contact card override (since it has !important rules) */
+html.dark-mode .feature-box span {
+    color: #ffffff;
+}
+
+/* ---------- 9. BUTTONS INSIDE CARDS ---------- */
+html.dark-mode .course-card .btn {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+html.dark-mode .course-card .btn:hover {
+    background-color: #ffffff;
+    color: #12181f;
+    border-color: #ffffff;
+}
+
+html.dark-mode .course-card .card-footer a.card-btn.d-block {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+html.dark-mode .course-card .card-footer a.card-btn.d-block:hover {
+    background-color: #ffffff;
+    color: #12181f;
+}
+
+/* ---------- 10. CONTACT CARDS (has !important rules to beat) ---------- */
 html.dark-mode .contact-card,
 html.dark-mode div.contact-card {
     background-color: #1a222c !important;
@@ -2006,7 +2107,49 @@ html.dark-mode .contact-card .card-title {
     color: #ffffff !important;
 }
 
-/* List groups (How to Apply, Required Documents) */
+/* ---------- 11. TABLES (Eligibility, Fee, Results) ---------- */
+html.dark-mode .table {
+    color: var(--text-body);
+    border-color: var(--border-color);
+}
+
+html.dark-mode .eligibility-table tbody tr:hover,
+html.dark-mode .fee-table tbody tr:hover,
+html.dark-mode #results-table tbody tr:hover {
+    background-color: rgba(255, 193, 7, 0.08);
+}
+
+html.dark-mode .eligibility-table td,
+html.dark-mode .fee-table td,
+html.dark-mode #results-table td {
+    color: var(--text-body);
+    border-color: var(--border-color);
+}
+
+/* ---------- 12. FORMS (Results Filter, Contact Form) ---------- */
+html.dark-mode .form-control,
+html.dark-mode .form-select {
+    background-color: #1a222c;
+    border-color: var(--border-color);
+    color: var(--text-body);
+}
+
+html.dark-mode .form-control::placeholder {
+    color: #888;
+}
+
+html.dark-mode .form-control:focus,
+html.dark-mode .form-select:focus {
+    background-color: #1a222c;
+    color: var(--text-body);
+    border-color: var(--gold-accent);
+}
+
+html.dark-mode .form-label {
+    color: #ffffff;
+}
+
+/* ---------- 13. LIST GROUPS (How to Apply, Required Documents) ---------- */
 html.dark-mode .apply-item,
 html.dark-mode .document-item {
     background-color: #1a222c;
@@ -2019,56 +2162,133 @@ html.dark-mode .document-item:hover {
     background-color: #222b38;
 }
 
-/* Gallery */
+html.dark-mode .apply-item h5 {
+    color: #ffffff;
+}
+
+html.dark-mode .document-item i {
+    color: #2ecc71;
+}
+
+/* ---------- 14. GALLERY ---------- */
 html.dark-mode .gallery-card {
     background-color: #1a222c;
 }
 
-/* Section borders (stats, featured-courses) */
+/* ---------- 15. ROTATING QUOTES ---------- */
+html.dark-mode #motto-quotes {
+    background-color: var(--bg-white) !important;
+}
+
+html.dark-mode #rotatingQuote {
+    color: #ffffff;
+}
+
+html.dark-mode #motto-quotes #rotatingQuote .quote-author {
+    color: var(--gold-accent);
+}
+
+/* ---------- 16. SECTION BORDERS ---------- */
 html.dark-mode #stats,
 html.dark-mode #featured-courses {
     border-color: var(--border-color);
 }
 
-/* Text-muted override for dark mode */
-html.dark-mode p.text-muted {
-    color: #a8a8a8 !important;
+/* ---------- 17. ALERT (Results page note) ---------- */
+html.dark-mode .alert-warning {
+    background-color: #2a2410;
+    color: #f0d264;
+    border-left-color: var(--gold-accent);
 }
-body, .course-card, .mission-card, .vision-card, .feature-card,
-.team-card, .stats-card, .contact-card, .testimonial-card,
-.course-preview-card, .form-control, .form-select {
+
+/* ---------- 18. SMOOTH THEME TRANSITION ---------- */
+body,
+.course-card, .mission-card, .vision-card, .feature-card,
+.team-card, .faculty-card, .stats-card, .contact-card,
+.testimonial-card, .course-preview-card, .form-control,
+.form-select, .apply-item, .document-item, .gallery-card,
+#motto-quotes, .eligibility-table, .fee-table {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-/* Force Bootstrap bg utilities to respect dark mode */
-html.dark-mode .bg-white {
+html.dark-mode .stats-card i {
+    background-color: #b0b8c1 !important;
+    color: var(--navy-primary) !important;
+}
+
+html.dark-mode .stats-card i::before {
+    color: var(--navy-primary) !important;
+}
+html.dark-mode #results-filter,
+html.dark-mode #results-table,
+html.dark-mode #contact-header,
+html.dark-mode #contact-form {
     background-color: var(--bg-white) !important;
 }
 
-html.dark-mode .bg-light {
-    background-color: var(--bg-light) !important;
-}
-html.dark-mode {
-    background-color: var(--bg-white);
+/* Table cell backgrounds — Bootstrap's .table doesn't inherit section bg */
+html.dark-mode .table,
+html.dark-mode .eligibility-table,
+html.dark-mode .fee-table,
+html.dark-mode #results-table table {
+    background-color: #1a222c !important;
 }
 
-html.dark-mode #about-preview,
-html.dark-mode #stats,
-html.dark-mode #testimonials,
-html.dark-mode #academy-overview,
-html.dark-mode #why-choose-us,
-html.dark-mode #courses,
-html.dark-mode #admissions-header,
-html.dark-mode #how-to-apply,
+html.dark-mode .table td,
+html.dark-mode .table th,
+html.dark-mode .eligibility-table td,
+html.dark-mode .fee-table td,
+html.dark-mode #results-table td {
+    background-color: #1a222c !important;
+    color: var(--text-body) !important;
+    border-color: var(--border-color) !important;
+}
 html.dark-mode #results-header,
-html.dark-mode #gallery-header,
-html.dark-mode #required-documents {
-    background-color: var(--bg-white) !important;
+html.dark-mode #results-filter,
+html.dark-mode #results-table {
+    background-color: #12181f !important;
 }
 
-html.dark-mode #mission-vision,
-html.dark-mode #leadership-team,
-html.dark-mode #fee-structure,
-html.dark-mode #eligibility,
-html.dark-mode #featured-courses {
-    background-color: var(--bg-light) !important;
+html.dark-mode .filter-box {
+    background-color: #1a222c !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+}
+
+html.dark-mode .form-select,
+html.dark-mode .form-control {
+    background-color: #1a222c !important;
+    color: #d6d6d6 !important;
+    border-color: #2a3441 !important;
+}
+
+html.dark-mode #results-table .table {
+    --bs-table-bg: #1a222c !important;
+    --bs-table-color: #d6d6d6 !important;
+    --bs-table-border-color: #2a3441 !important;
+    --bs-table-hover-bg: rgba(255, 193, 7, 0.08) !important;
+}
+
+html.dark-mode #results-table thead {
+    background-color: var(--navy-primary) !important;
+    color: #ffffff !important;
+}
+
+html.dark-mode #results-table td,
+html.dark-mode #results-table th {
+    background-color: #1a222c !important;
+    color: #d6d6d6 !important;
+    border-color: #2a3441 !important;
+}
+
+html.dark-mode .alert-warning {
+    background-color: #2a2410 !important;
+    color: #f0d264 !important;
+}
+html.dark-mode .btn-outline-warning {
+    color: var(--gold-accent);
+}
+
+html.dark-mode .btn-outline-warning:hover,
+html.dark-mode .btn-outline-warning.active {
+    background-color: var(--gold-accent);
+    color: var(--navy-primary);
 }

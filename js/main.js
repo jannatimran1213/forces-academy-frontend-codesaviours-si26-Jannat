@@ -326,6 +326,8 @@ if (quoteEl) {
 
     }, 5000);
 }
+
+
 // ===== DARK / LIGHT MODE TOGGLE =====
 function initThemeToggle() {
     const themeToggleBtn = document.getElementById('themeToggle');
