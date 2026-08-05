@@ -15,6 +15,20 @@
     --bg-white: #ffffff;           /* Card Backgrounds */
     --border-color: #e9ecef;       /* Subtle Card Borders & Dividers */
 }
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.feature-box {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.feature-box span {
+    white-space: normal;
+    word-break: break-word;
+}
 
 /* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -2291,4 +2305,105 @@ html.dark-mode .btn-outline-warning:hover,
 html.dark-mode .btn-outline-warning.active {
     background-color: var(--gold-accent);
     color: var(--navy-primary);
+}
+/* PAGE LOAD & SCROLL ANIMATIONS */
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardStaggerIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- HERO HEADING FADE-IN (runs on page load) ---------- */
+.hero-section h1 {
+    opacity: 0;
+    animation: fadeInHero 0.9s ease-out 0.2s forwards;
+}
+
+.hero-section .badge {
+    opacity: 0;
+    animation: fadeInHero 0.7s ease-out 0s forwards;
+}
+
+.hero-section p {
+    opacity: 0;
+    animation: fadeInHero 0.9s ease-out 0.4s forwards;
+}
+
+.hero-section .d-flex {
+    opacity: 0;
+    animation: fadeInHero 0.9s ease-out 0.6s forwards;
+}
+
+/* ---------- STATS SECTION SLIDE-UP (scroll-triggered) ---------- */
+.stats-card {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: none; /* let animation handle motion, not the hover transition */
+}
+
+.stats-card.in-view {
+    animation: slideUpFade 0.7s ease-out forwards;
+}
+
+/* Stagger each stat card slightly */
+.stats-card.in-view:nth-child(1) { animation-delay: 0s; }
+.stats-card.in-view:nth-child(2) { animation-delay: 0.12s; }
+.stats-card.in-view:nth-child(3) { animation-delay: 0.24s; }
+.stats-card.in-view:nth-child(4) { animation-delay: 0.36s; }
+
+/* ---------- FEATURED COURSE CARDS — STAGGERED (scroll-triggered) ---------- */
+.course-preview-card {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+}
+
+.course-preview-card.in-view {
+    animation: cardStaggerIn 0.6s ease-out forwards;
+}
+
+.course-preview-card.in-view:nth-child(1) { animation-delay: 0s; }
+.course-preview-card.in-view:nth-child(2) { animation-delay: 0.15s; }
+.course-preview-card.in-view:nth-child(3) { animation-delay: 0.3s; }
+
+/* ---------- RESPECT USERS WHO PREFER REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero-section h1,
+    .hero-section .badge,
+    .hero-section p,
+    .hero-section .d-flex,
+    .stats-card,
+    .course-preview-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

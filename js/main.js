@@ -1,272 +1,173 @@
 console.log("main.js loaded");
-document.addEventListener("DOMContentLoaded", () => {
-    // Navbar shadow on scroll
-    const navbar = document.getElementById("navbar");
-
-    function updateNavbar() {
-        if (window.scrollY > 40) {
-            navbar.style.padding = "10px 0";
-            navbar.style.boxShadow = "0 8px 20px rgba(0,0,0,0.18)";
-        } else {
-            navbar.style.padding = "14px 0";
-            navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
-        }
-    }
-
-    updateNavbar();
-
-    window.addEventListener("scroll", updateNavbar);
-
-    // Close mobile menu after clicking
-    const navLinks = document.querySelectorAll(".nav-link");
-    const navCollapse = document.querySelector(".navbar-collapse");
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            if (navCollapse.classList.contains("show")) {
-
-                const bsCollapse =
-                    bootstrap.Collapse.getInstance(navCollapse);
-
-                if (bsCollapse) {
-                    bsCollapse.hide();
-                }
-
-            }
-
-        });
-
-    });
-    // Smooth fade animation
-    const hero = document.querySelector(".hero-content");
-
-    hero.style.opacity = "0";
-    hero.style.transform = "translateY(25px)";
-    hero.style.transition = "all 1s ease";
-
-    setTimeout(() => {
-        hero.style.opacity = "1";
-        hero.style.transform = "translateY(0)";
-    }, 250);
-
-});
-
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Navbar Scroll Effect
 
+    // ===== NAVBAR SCROLL EFFECT =====
     const navbar = document.getElementById("navbar");
 
     function navbarEffect() {
+        if (!navbar) return;
 
         if (window.scrollY > 50) {
-
             navbar.style.padding = "10px 0";
             navbar.style.boxShadow = "0 8px 20px rgba(0,0,0,0.2)";
-
         } else {
-
             navbar.style.padding = "14px 0";
             navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.08)";
-
         }
-
     }
 
     navbarEffect();
-
     window.addEventListener("scroll", navbarEffect);
 
-    // Close Mobile Menu
+    // ===== CLOSE MOBILE MENU ON LINK CLICK =====
     const navLinks = document.querySelectorAll(".nav-link");
     const navCollapse = document.querySelector(".navbar-collapse");
 
     navLinks.forEach(link => {
-
         link.addEventListener("click", () => {
-
-            if (navCollapse.classList.contains("show")) {
-
+            if (navCollapse && navCollapse.classList.contains("show")) {
                 const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
-
                 if (bsCollapse) {
                     bsCollapse.hide();
                 }
-
             }
-
         });
-
     });
 
-    // Hero Fade Animation
-    const hero = document.querySelector(".hero-content");
-
-    if (hero) {
-
-        hero.style.opacity = "0";
-        hero.style.transform = "translateY(30px)";
-        hero.style.transition = "all 1s ease";
-
-        setTimeout(() => {
-
-            hero.style.opacity = "1";
-            hero.style.transform = "translateY(0)";
-
-        }, 200);
-
-    }
-
-    // Current Year in Footer
-
+    // ===== CURRENT YEAR IN FOOTER =====
     const year = document.getElementById("currentYear");
 
     if (year) {
-
         year.textContent = new Date().getFullYear();
-
     }
 
-});
-if (typeof GLightbox !== "undefined") {
-    const lightbox = GLightbox({
-        selector: '.glightbox'
-    });
-}
-const filterButtons = document.querySelectorAll(".filter-btn");
-const galleryItems = document.querySelectorAll("#gallery [data-category]");
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", function () {
-
-        const filter = this.dataset.filter;
-
-        // Remove active style from ALL buttons
-        filterButtons.forEach(btn => {
-            btn.classList.remove("btn-warning");
-            btn.classList.add("btn-outline-warning");
+    // ===== GLIGHTBOX (Gallery page only) =====
+    if (typeof GLightbox !== "undefined") {
+        GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true
         });
+    }
 
-        // Highlight the clicked button
-        this.classList.remove("btn-outline-warning");
-        this.classList.add("btn-warning");
+    // ===== GALLERY FILTER BUTTONS =====
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryItems = document.querySelectorAll("#gallery [data-category]");
 
-        // Filter gallery items
-        galleryItems.forEach(item => {
+    if (filterButtons.length) {
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const filter = this.dataset.filter;
 
-            if (filter === "all" || item.dataset.category === filter) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("btn-warning");
+                    btn.classList.add("btn-outline-warning");
+                });
 
+                this.classList.remove("btn-outline-warning");
+                this.classList.add("btn-warning");
+
+                galleryItems.forEach(item => {
+                    if (filter === "all" || item.dataset.category === filter) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
         });
+    }
 
-    });
+    // ===== CONTACT FORM (fallback validation) =====
+    const contactForm = document.getElementById("contactForm");
 
-});
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-const contactForm = document.getElementById("contactForm");
+            const name = document.getElementById("name")?.value.trim();
+            const email = document.getElementById("email")?.value.trim();
+            const phone = document.getElementById("phone")?.value.trim();
+            const subject = document.getElementById("subject")?.value.trim();
+            const message = document.getElementById("message")?.value.trim();
 
-if (contactForm) {
-
-    contactForm.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !phone || !subject || !message) {
-
-            alert("Please fill in all required fields.");
-            return;
-
-        }
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(email)) {
-
-            alert("Please enter a valid email address.");
-            return;
-
-        }
-
-        alert("Form submitted successfully!");
-
-        contactForm.reset();
-
-    });
-
-}
-
-const counters = document.querySelectorAll(".counter");
-
-let started = false;
-
-function startCounter() {
-
-    counters.forEach(counter => {
-
-        const target = +counter.dataset.target;
-
-        let count = 0;
-
-        const increment = target / 100;
-
-        const updateCounter = () => {
-
-            if (count < target) {
-
-                count += increment;
-
-                counter.innerText = Math.ceil(count);
-
-                requestAnimationFrame(updateCounter);
-
+            if (!name || !email || !phone || !subject || !message) {
+                alert("Please fill in all required fields.");
+                return;
             }
 
-            else {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                counter.innerText = target;
-
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
             }
 
-        };
+            alert("Form submitted successfully!");
+            contactForm.reset();
+        });
+    }
 
-        updateCounter();
+    // ===== STATS COUNTER ANIMATION =====
+    const counters = document.querySelectorAll(".counter");
+    let started = false;
 
-    });
+    function startCounter() {
+        counters.forEach(counter => {
+            const target = +counter.dataset.target;
+            let count = 0;
+            const increment = target / 100;
 
-}
-const statsCards = document.querySelectorAll(".stats-card");
+            const updateCounter = () => {
+                if (count < target) {
+                    count += increment;
+                    counter.innerText = Math.ceil(count);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target;
+                }
+            };
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !started) {
-            started = true;
-            startCounter();
-        }
-    });
-}, {
-    threshold: 0.5
-});
+            updateCounter();
+        });
+    }
 
-statsCards.forEach(card => observer.observe(card));
+    const statsCards = document.querySelectorAll(".stats-card");
 
-document.addEventListener("DOMContentLoaded", function () {
+    if (statsCards.length) {
+        const counterObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !started) {
+                    started = true;
+                    startCounter();
+                }
+            });
+        }, { threshold: 0.5 });
 
+        statsCards.forEach(card => counterObserver.observe(card));
+    }
+
+    // ===== SCROLL-TRIGGERED ANIMATIONS (Stats + Featured Courses) =====
+    const animatedElements = document.querySelectorAll(".stats-card, .course-preview-card");
+
+    if (animatedElements.length) {
+        const animationObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    animationObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        animatedElements.forEach(el => animationObserver.observe(el));
+    }
+
+    // ===== BACK TO TOP BUTTON =====
     const backToTop = document.getElementById("backToTop");
 
     if (backToTop) {
-
         window.addEventListener("scroll", function () {
             if (window.scrollY > 300) {
                 backToTop.style.display = "block";
@@ -276,68 +177,51 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         backToTop.addEventListener("click", function () {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-
     }
 
-});
+    // ===== AOS ANIMATION LIBRARY =====
+    if (typeof AOS !== "undefined") {
+        AOS.init({ duration: 800, once: true });
+    }
 
-AOS.init({ duration: 800, once: true });
+    // ===== ROTATING QUOTES / MOTTOS (Home page only) =====
+    const quotes = [
+        { text: "Discipline is the soul of an army.", author: "George Washington" },
+        { text: "The more you sweat in training, the less you bleed in battle.", author: "Military Proverb" },
+        { text: "Courage is not the absence of fear, but the triumph over it.", author: "Nelson Mandela" },
+        { text: "Success is where preparation and opportunity meet.", author: "Bobby Unser" }
+    ];
 
+    const quoteEl = document.getElementById("rotatingQuote");
 
+    if (quoteEl) {
+        let quoteIndex = 0;
 
-/* 2. ROTATING QUOTES / MOTTOS (slide from side) */
-const quotes = [
-    { text: "Discipline is the soul of an army.", author: "George Washington" },
-    { text: "The more you sweat in training, the less you bleed in battle.", author: "Military Proverb" },
-    { text: "Courage is not the absence of fear, but the triumph over it.", author: "Nelson Mandela" },
-    { text: "Success is where preparation and opportunity meet.", author: "Bobby Unser" }
-];
+        setInterval(() => {
+            quoteEl.classList.add("slide-out");
 
-const quoteEl = document.getElementById("rotatingQuote");
+            setTimeout(() => {
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                const q = quotes[quoteIndex];
+                quoteEl.innerHTML = `"${q.text}" <span class="quote-author">— ${q.author}</span>`;
 
-if (quoteEl) {
-    let quoteIndex = 0;
+                quoteEl.classList.remove("slide-out");
+                quoteEl.classList.add("slide-in-start");
 
-    setInterval(() => {
-        // Slide current quote out to the left
-        quoteEl.classList.add("slide-out");
+                void quoteEl.offsetWidth;
 
-        setTimeout(() => {
-            // Update text
-            quoteIndex = (quoteIndex + 1) % quotes.length;
-            const q = quotes[quoteIndex];
-            quoteEl.innerHTML = `"${q.text}" <span class="quote-author">— ${q.author}</span>`;
+                quoteEl.classList.remove("slide-in-start");
+            }, 600);
 
-            // Position it off-screen to the right, no transition
-            quoteEl.classList.remove("slide-out");
-            quoteEl.classList.add("slide-in-start");
+        }, 5000);
+    }
 
-            // Force reflow so the browser registers the new position
-            void quoteEl.offsetWidth;
-
-            // Remove slide-in-start so it transitions back to center
-            quoteEl.classList.remove("slide-in-start");
-        }, 600);
-
-    }, 5000);
-}
-
-
-// ===== DARK / LIGHT MODE TOGGLE =====
-function initThemeToggle() {
+    // ===== DARK / LIGHT MODE TOGGLE =====
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const rootHtml = document.documentElement;
-
-    if (!themeToggleBtn) {
-        console.warn('Theme toggle button not found on this page.');
-        return;
-    }
 
     const savedTheme = localStorage.getItem('forces-academy-theme');
     if (savedTheme === 'dark') {
@@ -345,22 +229,20 @@ function initThemeToggle() {
         updateIcon(true);
     }
 
-    themeToggleBtn.addEventListener('click', function () {
-        const isDark = rootHtml.classList.toggle('dark-mode');
-        localStorage.setItem('forces-academy-theme', isDark ? 'dark' : 'light');
-        updateIcon(isDark);
-    });
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+            const isDark = rootHtml.classList.toggle('dark-mode');
+            localStorage.setItem('forces-academy-theme', isDark ? 'dark' : 'light');
+            updateIcon(isDark);
+        });
+    } else {
+        console.warn('Theme toggle button not found on this page.');
+    }
 
     function updateIcon(isDark) {
         if (!themeIcon) return;
         themeIcon.classList.toggle('bi-moon-stars-fill', !isDark);
         themeIcon.classList.toggle('bi-sun-fill', isDark);
     }
-}
 
-// Works whether DOM is already ready or not
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initThemeToggle);
-} else {
-    initThemeToggle();
-}
+});
