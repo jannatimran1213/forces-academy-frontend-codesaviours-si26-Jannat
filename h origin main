@@ -1,0 +1,20 @@
+* [33m21c55a6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Bypass Jekyll build engine
+* [33m2586781[m Trigger static page deployment
+* [33m4e036d4[m clear deployment lock
+* [33m711cee4[m Force re-trigger stuck pages deployment
+* [33m3daaf08[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Remove unnecessary meta tags from about.html
+* [33m858e3ec[m Remove unnecessary meta tags from admissions.html
+* [33m5d2858f[m Remove unnecessary meta tags from contact.html
+* [33mce4ecd8[m Remove unnecessary meta tags from courses.html
+* [33ma0eb650[m Remove meta tags from gallery.html
+* [33m503231c[m Remove unnecessary meta tags from index.html
+* [33m208d735[m Remove unnecessary meta tags from results.html
+* [33m60ffc32[m Re-trigger stuck deployment
+* [33md139d1c[m Fix og:image path
+* [33m79ff86b[m Fix meta asset paths in index.html
+* [33m6e08135[m Bypass Jekyll build engine
+* [33m1d111a5[m Trigger static page deployment
+* [33mb1147f9[m Deploy pure HTML site
+* [33m553867f[m clear deployment lock
+* [33mb1db764[m Force re-trigger stuck pages deployment
+* [33m0caad45[m Add SEO metadata and improve website accessibility
