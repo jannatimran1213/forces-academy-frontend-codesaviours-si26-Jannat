@@ -2224,14 +2224,7 @@ body,
 #motto-quotes, .eligibility-table, .fee-table {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-html.dark-mode .stats-card i {
-    background-color: #b0b8c1 !important;
-    color: var(--navy-primary) !important;
-}
 
-html.dark-mode .stats-card i::before {
-    color: var(--navy-primary) !important;
-}
 html.dark-mode #results-filter,
 html.dark-mode #results-table,
 html.dark-mode #contact-header,
