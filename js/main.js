@@ -148,22 +148,47 @@ document.addEventListener("DOMContentLoaded", function () {
         statsCards.forEach(card => counterObserver.observe(card));
     }
 
-    // ===== SCROLL-TRIGGERED ANIMATIONS (Stats + Featured Courses) =====
-    const animatedElements = document.querySelectorAll(".stats-card, .course-preview-card");
+   // ===== SCROLL-TRIGGERED ANIMATIONS (all card types, site-wide) =====
+    const cardSelectors = [
+        ".stats-card",
+        ".course-preview-card",
+        ".announcement-card",
+        ".mission-card",
+        ".vision-card",
+        ".feature-card",
+        ".faculty-card",
+        ".course-card",
+        ".contact-card",
+        ".testimonial-card"
+    ];
 
-    if (animatedElements.length) {
-        const animationObserver = new IntersectionObserver(entries => {
+    const cardSections = document.querySelectorAll("section");
+
+    cardSections.forEach(section => {
+        const cards = section.querySelectorAll(cardSelectors.join(","));
+        if (!cards.length) return;
+
+        cards.forEach((card, index) => {
+            card.dataset.staggerDelay = `${Math.min(index * 0.12, 0.6)}s`;
+        });
+    });
+
+    const allAnimatedCards = document.querySelectorAll(cardSelectors.join(","));
+
+    if (allAnimatedCards.length) {
+        const cardObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.staggerDelay || "0s";
+                    entry.target.style.animationDelay = delay;
                     entry.target.classList.add("in-view");
-                    animationObserver.unobserve(entry.target);
+                    cardObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.2 });
 
-        animatedElements.forEach(el => animationObserver.observe(el));
+        allAnimatedCards.forEach(el => cardObserver.observe(el));
     }
-
     // ===== BACK TO TOP BUTTON =====
     const backToTop = document.getElementById("backToTop");
 

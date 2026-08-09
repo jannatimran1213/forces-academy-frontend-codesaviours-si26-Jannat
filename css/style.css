@@ -2356,36 +2356,65 @@ html.dark-mode .btn-outline-warning.active {
     animation: fadeInHero 0.9s ease-out 0.6s forwards;
 }
 
-/* ---------- STATS SECTION SLIDE-UP (scroll-triggered) ---------- */
-.stats-card {
+/* ---------- SCROLL-TRIGGERED CARD ANIMATIONS (SITE-WIDE) ---------- */
+.stats-card,
+.course-preview-card,
+.announcement-card,
+.mission-card,
+.vision-card,
+.feature-card,
+.faculty-card,
+.course-card,
+.contact-card,
+.testimonial-card {
     opacity: 0;
-    transform: translateY(35px);
-    transition: none; /* let animation handle motion, not the hover transition */
+    transform: translateY(28px) scale(0.97);
+    transition: none; /* animation handles motion, hover transition re-enabled below */
 }
 
-.stats-card.in-view {
-    animation: slideUpFade 0.7s ease-out forwards;
+.stats-card.in-view,
+.course-preview-card.in-view,
+.announcement-card.in-view,
+.mission-card.in-view,
+.vision-card.in-view,
+.feature-card.in-view,
+.faculty-card.in-view,
+.course-card.in-view,
+.contact-card.in-view,
+.testimonial-card.in-view {
+    animation: cardStaggerIn 0.65s ease-out forwards;
 }
 
-/* Stagger each stat card slightly */
-.stats-card.in-view:nth-child(1) { animation-delay: 0s; }
-.stats-card.in-view:nth-child(2) { animation-delay: 0.12s; }
-.stats-card.in-view:nth-child(3) { animation-delay: 0.24s; }
-.stats-card.in-view:nth-child(4) { animation-delay: 0.36s; }
-
-/* ---------- FEATURED COURSE CARDS — STAGGERED (scroll-triggered) ---------- */
-.course-preview-card {
-    opacity: 0;
-    transform: translateY(25px) scale(0.97);
+/* Re-enable hover transitions once the card has finished entering */
+.stats-card.in-view,
+.course-preview-card.in-view,
+.announcement-card.in-view,
+.mission-card.in-view,
+.vision-card.in-view,
+.feature-card.in-view,
+.faculty-card.in-view,
+.course-card.in-view,
+.contact-card.in-view,
+.testimonial-card.in-view {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.course-preview-card.in-view {
-    animation: cardStaggerIn 0.6s ease-out forwards;
+@media (prefers-reduced-motion: reduce) {
+    .stats-card,
+    .course-preview-card,
+    .announcement-card,
+    .mission-card,
+    .vision-card,
+    .feature-card,
+    .faculty-card,
+    .course-card,
+    .contact-card,
+    .testimonial-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
-
-.course-preview-card.in-view:nth-child(1) { animation-delay: 0s; }
-.course-preview-card.in-view:nth-child(2) { animation-delay: 0.15s; }
-.course-preview-card.in-view:nth-child(3) { animation-delay: 0.3s; }
 
 /* ---------- RESPECT USERS WHO PREFER REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -2399,4 +2428,108 @@ html.dark-mode .btn-outline-warning.active {
         opacity: 1 !important;
         transform: none !important;
     }
+}
+
+/* ANNOUNCEMENTS SECTION */
+#announcements {
+    background-color: var(--bg-light);
+}
+
+.announcement-card {
+    background-color: var(--bg-white);
+    border-radius: 15px;
+    padding: 30px 25px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--gold-accent);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.announcement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.announcement-date {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    background-color: var(--navy-primary);
+    color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.announcement-date .day {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.announcement-date .month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-accent);
+}
+
+.announcement-body h4 {
+    color: var(--navy-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.announcement-body p {
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.announcement-link {
+    color: var(--gold-hover);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.announcement-link:hover {
+    color: var(--navy-primary);
+}
+
+.announcement-link i {
+    transition: transform 0.2s ease;
+}
+
+.announcement-link:hover i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 576px) {
+    .announcement-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .announcement-date {
+        margin: 0 auto;
+    }
+}
+
+/* Dark mode support */
+html.dark-mode .announcement-card {
+    background-color: #1a222c;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark-mode .announcement-body h4 {
+    color: #ffffff;
+}
+
+html.dark-mode .announcement-body p {
+    color: var(--text-body);
 }
