@@ -7,7 +7,7 @@ A responsive frontend website developed as part of the Code Saviours (SMC-PRIVAT
 https://jannatimran1213.github.io/forces-academy-frontend-codesaviours-si26-Jannat/
 
 ##  Screenshots
-
+(Tablet View)
 ### Home Page
 ![Home Page](images/home.png)
 
