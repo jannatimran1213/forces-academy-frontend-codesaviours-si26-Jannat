@@ -313,10 +313,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 form.reset();
                 form.classList.remove("was-validated");
             })
-            .catch(function (error) {
-                console.error("EmailJS error:", error);
-                showAlert("danger", "Something went wrong. Please try again or contact us directly by phone.");
-            })
+       .catch(function (error) {
+    console.error("EmailJS status:", error.status);
+    console.error("EmailJS text:", error.text);
+    showAlert("danger", "Something went wrong. Please try again or contact us directly by phone.");
+})
             .finally(function () {
                 setLoading(false);
             });
