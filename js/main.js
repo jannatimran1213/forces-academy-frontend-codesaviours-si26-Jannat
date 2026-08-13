@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setLoading(true);
         alertBox.classList.add("d-none");
 
-        emailjs.sendForm("service_sg3bruq", "template_1av2qt4", form)
+        emailjs.sendForm("service_fy178ad", "template_1av2qt4", form)
             .then(function () {
                 showAlert("success", "Thank you! Your enquiry has been sent. Our admissions team will contact you shortly.");
                 form.reset();
