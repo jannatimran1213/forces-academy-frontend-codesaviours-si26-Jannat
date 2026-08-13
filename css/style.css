@@ -2581,3 +2581,25 @@ html.dark-mode .announcement-body p {
 .announcement-card .btn:hover i {
     transform: translateX(4px);
 }
+/* ADMISSIONS ENQUIRY FORM */
+#enquiry-form .card {
+    border-radius: 12px;
+}
+
+#enquiry-form .form-control,
+#enquiry-form .form-select {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+#enquiry-form textarea {
+    resize: none;
+}
+
+#enquiryFormAlert {
+    border-radius: 10px;
+}
+
+html.dark-mode #enquiry-form .card {
+    background-color: #1a222c;
+}

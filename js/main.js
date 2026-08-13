@@ -271,3 +271,54 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+  
+(function () {
+    // Initialize with your Public Key
+    emailjs.init({ publicKey: "ml3NA4wXQwfZ3DTin" });
+
+    const form = document.getElementById("enquiryForm");
+    const alertBox = document.getElementById("enquiryFormAlert");
+    const submitBtn = document.getElementById("enquirySubmitBtn");
+    const btnText = submitBtn.querySelector(".btn-text");
+    const btnSpinner = submitBtn.querySelector(".btn-spinner");
+
+    function showAlert(type, message) {
+        alertBox.className = `alert alert-${type}`;
+        alertBox.textContent = message;
+        alertBox.classList.remove("d-none");
+    }
+
+    function setLoading(isLoading) {
+        submitBtn.disabled = isLoading;
+        btnText.classList.toggle("d-none", isLoading);
+        btnSpinner.classList.toggle("d-none", !isLoading);
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Bootstrap-style validation
+        if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+        }
+
+        setLoading(true);
+        alertBox.classList.add("d-none");
+
+        emailjs.sendForm("service_sg3bruq", "template_1av2qt4", form)
+            .then(function () {
+                showAlert("success", "Thank you! Your enquiry has been sent. Our admissions team will contact you shortly.");
+                form.reset();
+                form.classList.remove("was-validated");
+            })
+            .catch(function (error) {
+                console.error("EmailJS error:", error);
+                showAlert("danger", "Something went wrong. Please try again or contact us directly by phone.");
+            })
+            .finally(function () {
+                setLoading(false);
+            });
+    });
+})();
