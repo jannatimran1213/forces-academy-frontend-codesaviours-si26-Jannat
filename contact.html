@@ -22,7 +22,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
 
@@ -133,21 +133,48 @@
                 if (!valid) isFormValid = false;
             });
 
-            if (!isFormValid) {
-                // Focus the first invalid field for accessibility
-                const firstInvalid = contactForm.querySelector(".is-invalid");
-                if (firstInvalid) firstInvalid.focus();
-                return;
-            }
+           if (!isFormValid) {
+    const firstInvalid = contactForm.querySelector(".is-invalid");
+    if (firstInvalid) firstInvalid.focus();
+    return;
+}
 
-            alert("Form submitted successfully!");
+const alertBox = document.getElementById("contactFormAlert");
+const submitBtn = document.getElementById("contactSubmitBtn");
+const btnText = submitBtn.querySelector(".btn-text");
+const btnSpinner = submitBtn.querySelector(".btn-spinner");
 
-            contactForm.reset();
+submitBtn.disabled = true;
+btnText.classList.add("d-none");
+btnSpinner.classList.remove("d-none");
+alertBox.classList.add("d-none");
 
-            fieldIds.forEach(function (id) {
-                const field = getField(id);
-                if (field) field.classList.remove("is-valid", "is-invalid");
-            });
+emailjs.init({ publicKey: "ml3NA4wXQwfZ3DTin" });
+
+emailjs.sendForm("service_fy178ad", "template_1av2qt4", contactForm)
+    .then(function () {
+        alertBox.className = "alert alert-success";
+        alertBox.textContent = "Thank you! Your message has been sent. We'll get back to you shortly.";
+        alertBox.classList.remove("d-none");
+
+        contactForm.reset();
+        fieldIds.forEach(function (id) {
+            const field = getField(id);
+            if (field) field.classList.remove("is-valid", "is-invalid");
+        });
+    })
+    .catch(function (error) {
+        console.error("EmailJS status:", error && error.status);
+        console.error("EmailJS text:", error && error.text);
+        alertBox.className = "alert alert-danger";
+        alertBox.textContent = "Something went wrong. Please try again or contact us directly by phone.";
+        alertBox.classList.remove("d-none");
+    })
+    .finally(function () {
+        submitBtn.disabled = false;
+        btnText.classList.remove("d-none");
+        btnSpinner.classList.add("d-none");
+    });
 
         });
 
@@ -240,13 +267,13 @@
 
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label" for="name">Full Name</label>
-                                        <input type="text" id="name" class="form-control" placeholder="Your Name" required minlength="3" maxlength="50">
+                                      <input type="text" id="name" name="from_name" class="form-control" placeholder="Your Name" required minlength="3" maxlength="50">
                                         <div class="invalid-feedback">Please enter a valid name.</div>
                                     </div>
 
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label" for="email">Email Address</label>
-                                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                                        <input type="email" id="email" name="from_email" class="form-control" placeholder="Your Email" required>
                                         <div class="invalid-feedback">Please enter a valid email address.</div>
                                     </div>
 
@@ -256,13 +283,13 @@
 
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label" for="phone">Phone Number</label>
-                                        <input type="tel" id="phone" class="form-control" placeholder="e.g. 0300-1234567" required>
+                                       <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. 0300-1234567" required>
                                         <div class="invalid-feedback">Please enter a valid phone number.</div>
                                     </div>
 
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label" for="subject">Subject</label>
-                                        <input type="text" id="subject" class="form-control" placeholder="Subject" required minlength="3" maxlength="100">
+<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required minlength="3" maxlength="100">
                                         <div class="invalid-feedback">Please enter a subject.</div>
                                     </div>
 
@@ -271,7 +298,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="message">Message</label>
 
-                                    <textarea id="message" class="form-control" rows="5" placeholder="Message" required minlength="10" maxlength="1000"></textarea>
+                                   <textarea id="message" name="message" class="form-control" rows="5" placeholder="Message" required minlength="10" maxlength="1000"></textarea>
                                     <div class="invalid-feedback">Please enter a message (at least 10 characters).</div>
                                 </div>
 
