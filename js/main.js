@@ -2,7 +2,7 @@ console.log("main.js loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ===== NAVBAR SCROLL EFFECT =====
+    //NAVBAR SCROLL EFFECT
     const navbar = document.getElementById("navbar");
 
     function navbarEffect() {
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navbarEffect();
     window.addEventListener("scroll", navbarEffect);
 
-    // ===== CLOSE MOBILE MENU ON LINK CLICK =====
+    //CLOSE MOBILE MENU ON LINK CLICK
     const navLinks = document.querySelectorAll(".nav-link");
     const navCollapse = document.querySelector(".navbar-collapse");
 
@@ -35,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ===== CURRENT YEAR IN FOOTER =====
+    //CURRENT YEAR IN FOOTER
     const year = document.getElementById("currentYear");
 
     if (year) {
         year.textContent = new Date().getFullYear();
     }
 
-    // ===== GLIGHTBOX (Gallery page only) =====
+    //GLIGHTBOX 
     if (typeof GLightbox !== "undefined") {
         GLightbox({
             selector: '.glightbox',
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ===== GALLERY FILTER BUTTONS =====
+    //GALLERY FILTER BUTTONS
     const filterButtons = document.querySelectorAll(".filter-btn");
     const galleryItems = document.querySelectorAll("#gallery [data-category]");
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ===== CONTACT FORM (fallback validation) =====
+    //CONTACT FORM 
     const contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ===== STATS COUNTER ANIMATION =====
+    //STATS COUNTER ANIMATION
     const counters = document.querySelectorAll(".counter");
     let started = false;
 
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         statsCards.forEach(card => counterObserver.observe(card));
     }
 
-   // ===== SCROLL-TRIGGERED ANIMATIONS (all card types, site-wide) =====
+   // SCROLL-TRIGGERED ANIMATIONS 
     const cardSelectors = [
         ".stats-card",
         ".course-preview-card",
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         allAnimatedCards.forEach(el => cardObserver.observe(el));
     }
-    // ===== BACK TO TOP BUTTON =====
+    //BACK TO TOP BUTTON
     const backToTop = document.getElementById("backToTop");
 
     if (backToTop) {
@@ -206,12 +206,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ===== AOS ANIMATION LIBRARY =====
+    // AOS ANIMATION LIBRARY
     if (typeof AOS !== "undefined") {
         AOS.init({ duration: 800, once: true });
     }
 
-    // ===== ROTATING QUOTES / MOTTOS (Home page only) =====
+    //ROTATING QUOTES 
     const quotes = [
         { text: "Discipline is the soul of an army.", author: "George Washington" },
         { text: "The more you sweat in training, the less you bleed in battle.", author: "Military Proverb" },
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 5000);
     }
 
-    // ===== DARK / LIGHT MODE TOGGLE =====
+    // DARK / LIGHT MODE TOGGLE
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const rootHtml = document.documentElement;

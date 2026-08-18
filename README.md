@@ -2,9 +2,14 @@
 
 A responsive frontend website developed as part of the Code Saviours (SMC-PRIVATE) Limited Frontend Internship Programme (SI-26). The project represents a modern military academy website featuring information about admissions, courses, results, gallery, and contact details with a responsive and interactive user interface.
 
+
 ## Live Site
 
 https://jannatimran1213.github.io/forces-academy-frontend-codesaviours-si26-Jannat/
+
+##Github Repository
+
+https://github.com/jannatimran1213/forces-academy-frontend-codesaviours-si26-Jannat
 
 ##  Screenshots
 (Tablet View)

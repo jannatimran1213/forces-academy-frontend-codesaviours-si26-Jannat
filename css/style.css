@@ -64,7 +64,7 @@ section {
     border-bottom: 1px solid var(--border-color);
 }
 
-/* 3. TYPOGRAPHY & SECTION HEADERS */
+
 /* Main Section Headings (H2) */
 section h2, 
 #stats h2.fw-bold {
@@ -170,7 +170,6 @@ section h2,
 }
 
 /* 5. BUTTONS & CALL TO ACTIONS */
-/* Generic Primary Buttons */
 .btn-warning,
 .btn-primary-accent {
     background-color: var(--gold-accent);
@@ -1922,12 +1921,9 @@ p.text-muted {
         text-align: justify;
     }
 }
-/* ============================================================
-   DARK MODE — COMPLETE STYLESHEET
-   Add this entire block once, at the end of style.css
-   ============================================================ */
+/*DARK MODE*/
 
-/* ---------- 1. ROOT VARIABLE OVERRIDES ---------- */
+/*  ROOT VARIABLE OVERRIDES */
 html.dark-mode {
     --bg-white: #12181f;
     --bg-light: #1a222c;
@@ -1941,7 +1937,7 @@ html.dark-mode body {
     color: var(--text-body) !important;
 }
 
-/* ---------- 2. BOOTSTRAP UTILITY OVERRIDES ---------- */
+
 html.dark-mode .bg-white {
     background-color: var(--bg-white) !important;
 }
@@ -1958,15 +1954,13 @@ html.dark-mode .text-dark {
     color: #ffffff !important;
 }
 
-/* ---------- 3. NAVBAR & FOOTER ----------
-   Already navy-based, so they stay visually consistent.
-   No structural change needed — just confirming text stays white. */
+/*  NAVBAR & FOOTER  */
 html.dark-mode #navbar,
 html.dark-mode .academy-footer {
     background-color: var(--navy-primary);
 }
 
-/* ---------- 4. THEME TOGGLE BUTTON ---------- */
+/*  THEME TOGGLE BUTTON */
 .theme-toggle-btn {
     background-color: transparent;
     border: 2px solid var(--gold-accent);
@@ -1994,14 +1988,14 @@ html.dark-mode .academy-footer {
     }
 }
 
-/* ---------- 5. HERO SECTION ---------- */
+/* HERO SECTION */
 html.dark-mode .hero-section::after {
     content: '';
 }
 /* Hero already uses a dark navy gradient overlay, so it stays readable
    in both modes — no override needed for text color (already white). */
 
-/* ---------- 6. HEADINGS (SECTION TITLES) ---------- */
+/* HEADINGS (SECTION TITLES) */
 html.dark-mode section h2,
 html.dark-mode #stats h2.fw-bold,
 html.dark-mode #academy-overview h2,
@@ -2024,7 +2018,7 @@ html.dark-mode .section-subtitle::after {
     background-color: var(--gold-accent); /* keep gold underline */
 }
 
-/* ---------- 7. CARDS (GENERAL) ---------- */
+/* CARDS (GENERAL) */
 html.dark-mode .course-card,
 html.dark-mode .mission-card,
 html.dark-mode .vision-card,
@@ -2064,9 +2058,7 @@ html.dark-mode .testimonial-text {
     color: var(--text-body);
 }
 
-/* ---------- 8. ICON BOXES ----------
-   Navy circle + white icon already works fine on dark backgrounds,
-   so no change is required — kept as-is intentionally. */
+/* 8. ICON BOXES  */
 
 /* Feature-box (About Preview row of 4 icons, home page) */
 html.dark-mode .feature-box {
@@ -2082,7 +2074,7 @@ html.dark-mode .feature-box span {
     color: #ffffff;
 }
 
-/* ---------- 9. BUTTONS INSIDE CARDS ---------- */
+/* BUTTONS INSIDE CARDS*/
 html.dark-mode .course-card .btn {
     color: #ffffff;
     border-color: #ffffff;
@@ -2105,7 +2097,7 @@ html.dark-mode .course-card .card-footer a.card-btn.d-block:hover {
     color: #12181f;
 }
 
-/* ---------- 10. CONTACT CARDS (has !important rules to beat) ---------- */
+/* CONTACT CARDS  */
 html.dark-mode .contact-card,
 html.dark-mode div.contact-card {
     background-color: #1a222c !important;
@@ -2121,7 +2113,7 @@ html.dark-mode .contact-card .card-title {
     color: #ffffff !important;
 }
 
-/* ---------- 11. TABLES (Eligibility, Fee, Results) ---------- */
+/*  TABLES (Eligibility, Fee, Results) */
 html.dark-mode .table {
     color: var(--text-body);
     border-color: var(--border-color);
@@ -2140,7 +2132,7 @@ html.dark-mode #results-table td {
     border-color: var(--border-color);
 }
 
-/* ---------- 12. FORMS (Results Filter, Contact Form) ---------- */
+/* FORMS (Results Filter, Contact Form)  */
 html.dark-mode .form-control,
 html.dark-mode .form-select {
     background-color: #1a222c;
@@ -2163,7 +2155,7 @@ html.dark-mode .form-label {
     color: #ffffff;
 }
 
-/* ---------- 13. LIST GROUPS (How to Apply, Required Documents) ---------- */
+/* LIST GROUPS (How to Apply, Required Documents)  */
 html.dark-mode .apply-item,
 html.dark-mode .document-item {
     background-color: #1a222c;
@@ -2184,12 +2176,12 @@ html.dark-mode .document-item i {
     color: #2ecc71;
 }
 
-/* ---------- 14. GALLERY ---------- */
+/* GALLERY*/
 html.dark-mode .gallery-card {
     background-color: #1a222c;
 }
 
-/* ---------- 15. ROTATING QUOTES ---------- */
+/* ROTATING QUOTES  */
 html.dark-mode #motto-quotes {
     background-color: var(--bg-white) !important;
 }
@@ -2202,20 +2194,20 @@ html.dark-mode #motto-quotes #rotatingQuote .quote-author {
     color: var(--gold-accent);
 }
 
-/* ---------- 16. SECTION BORDERS ---------- */
+/* SECTION BORDERS */
 html.dark-mode #stats,
 html.dark-mode #featured-courses {
     border-color: var(--border-color);
 }
 
-/* ---------- 17. ALERT (Results page note) ---------- */
+/*  ALERT (Results page note)  */
 html.dark-mode .alert-warning {
     background-color: #2a2410;
     color: #f0d264;
     border-left-color: var(--gold-accent);
 }
 
-/* ---------- 18. SMOOTH THEME TRANSITION ---------- */
+/* SMOOTH THEME TRANSITION */
 body,
 .course-card, .mission-card, .vision-card, .feature-card,
 .team-card, .faculty-card, .stats-card, .contact-card,
@@ -2232,7 +2224,7 @@ html.dark-mode #contact-form {
     background-color: var(--bg-white) !important;
 }
 
-/* Table cell backgrounds — Bootstrap's .table doesn't inherit section bg */
+/* Table cell backgrounds*/
 html.dark-mode .table,
 html.dark-mode .eligibility-table,
 html.dark-mode .fee-table,
@@ -2301,7 +2293,7 @@ html.dark-mode .btn-outline-warning.active {
 }
 /* PAGE LOAD & SCROLL ANIMATIONS */
 
-/* ---------- KEYFRAMES ---------- */
+/*  KEYFRAMES */
 @keyframes fadeInHero {
     from {
         opacity: 0;
@@ -2335,7 +2327,7 @@ html.dark-mode .btn-outline-warning.active {
     }
 }
 
-/* ---------- HERO HEADING FADE-IN (runs on page load) ---------- */
+/* HERO HEADING FADE-IN (runs on page load)  */
 .hero-section h1 {
     opacity: 0;
     animation: fadeInHero 0.9s ease-out 0.2s forwards;
@@ -2356,7 +2348,7 @@ html.dark-mode .btn-outline-warning.active {
     animation: fadeInHero 0.9s ease-out 0.6s forwards;
 }
 
-/* ---------- SCROLL-TRIGGERED CARD ANIMATIONS (SITE-WIDE) ---------- */
+/* SCROLL-TRIGGERED CARD ANIMATIONS (SITE-WIDE) */
 .stats-card,
 .course-preview-card,
 .announcement-card,
@@ -2416,7 +2408,7 @@ html.dark-mode .btn-outline-warning.active {
     }
 }
 
-/* ---------- RESPECT USERS WHO PREFER REDUCED MOTION ---------- */
+/*RESPECT USERS WHO PREFER REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
     .hero-section h1,
     .hero-section .badge,
