@@ -17,6 +17,36 @@ https://jannatimran1213.github.io/forces-academy-frontend-codesaviours-si26-Jann
 ### Result Page
 ![Result Page](images/result.png)
 
+### Gallery Page
+![Gallery Page](images/gallery.png)
+
+## Project Structure
+
+```text
+forces-academy-frontend-codesaviours-si26-Jannat/
+│
+├── index.html
+├── about.html
+├── courses.html
+├── admissions.html
+├── results.html
+├── gallery.html
+├── contact.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── main.js
+│
+├── images/
+│   ├── home.png
+│   ├── about.png
+│   ├── result.png
+│   └── ...
+│
+└── README.md
+
 ##  Tech Stack
 
 - HTML5
@@ -42,5 +72,12 @@ https://jannatimran1213.github.io/forces-academy-frontend-codesaviours-si26-Jann
 - Contact form validation
 - Smooth scrolling
 - Back-to-top button
+
+## How to Run Locally
+
+1. Clone or download the repository.
+2. Open the project folder.
+3. Open `index.html` in a web browser.
+4. No server or database setup is required.
 
 Built by: Jannat Imran | Code Saviours SI-26 | 2026
