@@ -12,7 +12,7 @@ https://jannatimran1213.github.io/forces-academy-frontend-codesaviours-si26-Jann
 https://github.com/jannatimran1213/forces-academy-frontend-codesaviours-si26-Jannat
 
 ##  Screenshots
-(Tablet View)
+
 ### Home Page
 ![Home Page](images/home.png)
 
